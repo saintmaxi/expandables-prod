@@ -1,3 +1,4 @@
+
 /* Approval section */
 
 #approval-container {
@@ -10,7 +11,7 @@
 
 #approval {
     margin: 0;
-    width: 45%;
+    width: 50%;
     padding: 2vw;
    background-color: white;
    color: black;
@@ -28,7 +29,7 @@
 /* End approval section */
 
 .active {
-	background-color: #EE1C24;
+	background-color: #808080;
 }
 
 #selector-div {
@@ -37,10 +38,10 @@
 
 #selector-div button {
     display: inline-block;
-    font-size: 3vw;
-    line-height: 3vw;
+    font-size: 2vw;
+    line-height: 2vw;
     padding: 1vw;
-    width: 40%;
+    width: 30%;
 }
 
 #live-collections, #past-collections {
@@ -87,6 +88,7 @@
     height: 103.2%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.856);
+    z-index: 9999;
 }
 
 .cover button {
@@ -94,13 +96,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+.cover button:hover {
+    cursor: default;
 }
 
 .partner-collection {
 	border-style: solid;
 	/* border-color: black; */
 	/* border-radius: 20px; */
-	border-width: .5vw;
     width: 26%;
     margin: 2%;
     background-color: white;
@@ -133,8 +139,10 @@
 }
 
 .partner-collection h3 {
-    font-size: 1.8vw;
-    line-height: 1.8vw;
+    font-size: 1.6vw;
+    line-height: 1.6vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .partner-collection button {
@@ -146,6 +154,7 @@
     top: .5%;
     right: 1%;
     width: 15%;
+    z-index: 9999;
 }
 
 .collection-discord {
@@ -160,7 +169,7 @@
 	border-style: solid;
 	border-color: black;
 	/* border-radius: 20px; */
-	border-width: .5vw;
+	border-width: .2vw;
     width: 30%;
     /* min-width: 200px;
     min-height: 200px; */
@@ -168,7 +177,7 @@
     height: 200px;
     /* max-height: 300px;
     max-width: 300px; */
-    background-color: black;
+    background-color: black !important;
 }
 
 .collection-info {
@@ -181,6 +190,7 @@
     padding: 2%;
     color: black !important;
     padding-bottom: 10px;
+    text-align: left;
 }
 
 .collection-info button {
@@ -208,10 +218,35 @@ h4 {
     color: black;
 }
 
+.num-bought-div {
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
 .inside-text {
     font-size: 1vw;
-    line-height: 1vw;
-    color: white;
+    line-height: 1.2vw;
+}
+
+.collection-img-container {
+    position: relative;
+    width: 100%;
+}
+
+.collection-price-div {
+    position: absolute;
+    bottom: -5%;
+    width: 100%;
+    text-align: center;
+}
+
+.collection-price {
+    background-color: white;
+    padding: 0 .5vw;
+    border: solid black .2vw;
+    border-radius: 20px;
+    width: 40%;
+    display: inline-block;
 }
 
 #mint-prompt {
@@ -477,8 +512,14 @@ h4 {
         margin-top: 40px;
     }
 
+    .collection-price {
+        padding: 0.2vh .5vh;
+		border-width: 2px;
+        display: inline-block;
+    }
+
     .collection-img {
-		border-width: 5px;
+		border-width: 2px;
         width: 150px;
         height: 150px;
         min-width: 0px !important;
@@ -488,12 +529,14 @@ h4 {
     .collection-description {
         min-height: 20%;
         padding: 2%;
+        padding-top: 20px;
     }
 
     .partner-collection h3 {
         font-size: 3.8vh !important;
         line-height: 3.9vh !important;
-        margin-top: 10px;
+        margin-top: 20px;
+        padding: 0;
     }
 
     h3 {
@@ -508,10 +551,16 @@ h4 {
         color: black;
     }
 
+    .num-bought-div {
+        padding-bottom: 20px;
+        /* line-height: 5vh !important; */
+    }
+
     .inside-text {
         font-size: 2.4vh;
         line-height: 2.4vh;
-        padding-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     #mint-prompt {

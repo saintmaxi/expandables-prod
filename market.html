@@ -147,34 +147,64 @@
     <h2 id="scroll-indicator-live" style="text-align: center;color: white;"></h2>
     <h2 id="scroll-indicator-past" class="hidden" style="text-align: center;color: white;"></h2>
     <div id="live-collections">
-       <div id="ex1" class="partner-collection example">
-          <div class="cover">
-             <button class="loading-button" onclick="connect()">LOADING<span class="one">.</span><span class="two">.</span><span class="three">.</span></button>
-          </div>
-          <img class="collection-img" src="./images/Joona-Panda.png">
-          <div class="collection-info">
-             <h3>???</h3>
-             <h4>???/??? Filled</h4>
-             <div class="inside-text collection-description"> A new group of characters have ventured into the forest. Secure one for yourself with $BAMBOO!
-             </div>
-             <button class="button">BUY</button>
-          </div>
-       </div>
+      <div id="ex1" class="partner-collection example">
+         <div class="cover">
+            <button class="loading-button" onclick="connect()">LOADING<span class="one">.</span><span
+                  class="two">.</span><span class="three">.</span></button>
+         </div>
+         <a href="#">
+            <img class="collection-twitter" src="./images/twitter-white.png">
+         </a>
+         <div class="collection-img-container">
+            <img class="collection-img" src="./images/Joona-Panda.png">
+            <h4 class="collection-price-div">
+               <div class="collection-price">??? <img src="./images/bamboo-icon.png" class="bamboo-icon"></div>
+            </h4>
+         </div>
+         <br class="hide-on-mobile">
+         <br class="hide-on-mobile">
+         <div class="collection-info">
+            <h3><a class="clickable link" href="#" target="_blank" style="text-decoration: none;">EXAMPLE⬈</a></h3>
+            <div class="inside-text collection-description">
+               Expandables is a series of cute on-chain generated pixel pandas using Chainlink VRF for generation. Adopt and
+               venture your way into the Metaverse using our ERC-20 token $BAMBOO and the upcoming Panda Voxels!
+            </div>
+            <h4 class="num-bought-div">
+               <span>???</span>/<span>???</span> Filled
+            </h4>
+         </div>
+         <button class="button">BUY</button>
+      </div>
     </div>
     <div id="past-collections" class="hidden">
-       <div id="ex2" class="partner-collection example">
+      <div id="ex2" class="partner-collection example">
          <div class="cover">
-            <button class="loading-button" onclick="connect()">LOADING<span class="one">.</span><span class="two">.</span><span class="three">.</span></button>
+            <button class="loading-button" onclick="connect()">LOADING<span class="one">.</span><span
+                  class="two">.</span><span class="three">.</span></button>
          </div>
-         <img class="collection-img" src="./images/Joona-Panda.png">
+         <a href="#">
+            <img class="collection-twitter" src="./images/twitter-white.png">
+         </a>
+         <div class="collection-img-container">
+            <img class="collection-img" src="./images/Joona-Panda.png">
+            <h4 class="collection-price-div">
+               <div class="collection-price">??? <img src="./images/bamboo-icon.png" class="bamboo-icon"></div>
+            </h4>
+         </div>
+         <br class="hide-on-mobile">
+         <br class="hide-on-mobile">
          <div class="collection-info">
-            <h3>???</h3>
-            <h4>???/??? Filled</h4>
-            <div class="inside-text collection-description"> A new group of characters have ventured into the forest. Secure one for yourself with $BAMBOO!
+            <h3><a class="clickable link" href="#" target="_blank" style="text-decoration: none;">EXAMPLE⬈</a></h3>
+            <div class="inside-text collection-description">
+               Expandables is a series of cute on-chain generated pixel pandas using Chainlink VRF for generation. Adopt and
+               venture your way into the Metaverse using our ERC-20 token $BAMBOO and the upcoming Panda Voxels!
             </div>
-            <button class="button purchased">SOLD OUT</button>
+            <h4 class="num-bought-div">
+               <span>???</span>/<span>???</span> Filled
+            </h4>
          </div>
-       </div>
+         <button class="button">BUY</button>
+      </div>
     </div>
  </div>
  <div class="refresh-cache" id="clear-button" onclick="clearPendingTxs()">

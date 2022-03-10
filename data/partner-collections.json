@@ -1,26 +1,56 @@
 {
     "0": {
-        "name": "Expandables1",
-        "description": "Expandables is a series of cute on-chain generated pixel pandas using Chainlink VRF for generation. Adopt and venture your way into the Metaverse using our ERC-20 token $BAMBOO and the upcoming Panda Voxels!",
-        "image": "./images/Deeze.png",
-        "website": "#",
-        "twitter": "#",
-        "max-slots": 1000
+        "name": "vSamurai",
+        "description": "A limited-supply genesis NFT collection on the Ethereum Network. Play and Earn as you follow the path of vSamurai. Coming soon.",
+        "image": "https://pbs.twimg.com/media/FMzFI3DXwAY6BNn?format=png&name=small",
+        "website": "",
+        "twitter": "https://twitter.com/vSamurai_NFT",
+        "max-slots": 20,
+        "discord-required": "true"
     },
     "1": {
-        "name": "Expandables2",
-        "description": "Expandables is a series of cute on-chain generated pixel pandas using Chainlink VRF for generation. Adopt and venture your way into the Metaverse using our ERC-20 token $BAMBOO and the upcoming Panda Voxels!",
-        "image": "./images/Deeze.png",
-        "website": "#",
-        "twitter": "#",
-        "max-slots": 1000
+        "name": "Embers",
+        "description": "A collection of 5,555 burning hot NFTs living in the core of the blockchain. Coming in March 2022.",
+        "image": "https://github.com/saintmaxi/expandables-dev/blob/main/images/embers.gif?raw=true",
+        "website": "https://www.embersnft.com/",
+        "twitter": "https://twitter.com/embersnft",
+        "max-slots": 3,
+        "discord-required": "true"
     },
     "2": {
-        "name": "Expandables3",
-        "description": "Expandables is a series of cute on-chain generated pixel pandas using Chainlink VRF for generation. Adopt and venture your way into the Metaverse using our ERC-20 token $BAMBOO and the upcoming Panda Voxels!",
-        "image": "./images/Dikasso.png",
-        "website": "#",
-        "twitter": "#",
-        "max-slots": 1
+        "name": "Introverse",
+        "description": "With unity, wealth, and true knowledge, we will be the society of the future.",
+        "image": "https://github.com/saintmaxi/expandables-dev/blob/main/images/introverse.png?raw=true",
+        "website": "https://introverse.info/",
+        "twitter": "https://twitter.com/_introverse_",
+        "max-slots": 10,
+        "discord-required": "true"
+    },
+    "3": {
+        "name": "Eyes of Ignolia",
+        "description": "First decentralized anime created with the community | Seekers narrating the tale of Ignolia.",
+        "image": "https://pbs.twimg.com/profile_images/1466206671194177545/4nk-xvI1_400x400.jpg",
+        "website": "https://www.eyesofignolia.io/",
+        "twitter": "https://twitter.com/eyesofignolia",
+        "max-slots": 10,
+        "discord-required": "true"
+    },
+    "4": {
+        "name": "Ape-X",
+        "description": "4,444 pixelated + 3D simians on a journey to unify all apes.",
+        "image": "https://pbs.twimg.com/profile_images/1466206671194177545/4nk-xvI1_400x400.jpg",
+        "website": "https://ape-x.gg/",
+        "twitter": "https://twitter.com/apexnftofficial",
+        "max-slots": 25,
+        "discord-required": "true"
+    },
+    "5": {
+        "name": "Illogics",
+        "description": "The illogics have crash landed on Earth and are here to change the future of NFTs.",
+        "image": "https://pbs.twimg.com/profile_images/1501719725344182277/6D8QwVus_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/illogics",
+        "max-slots": 10,
+        "discord-required": "true"
     }
 }
