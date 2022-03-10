@@ -52,5 +52,14 @@
         "twitter": "https://twitter.com/illogics",
         "max-slots": 10,
         "discord-required": "true"
+    },
+    "6": {
+        "name": "Kiwami",
+        "description": "Designed in the Metaverse | Born in Japan",
+        "image": "https://github.com/saintmaxi/expandables-dev/blob/main/images/kiwamiRed.png?raw=true",
+        "website": "",
+        "twitter": "https://twitter.com/kiwaminft",
+        "max-slots": 5,
+        "discord-required": "false"
     }
 }
