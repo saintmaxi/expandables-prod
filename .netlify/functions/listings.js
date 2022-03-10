@@ -56,7 +56,7 @@ const getCollections = async() => {
                                     <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
                                 </h4>
                             </div>
-                            <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT WALLET</button>
+                            <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
                             </div>`
             liveJSX = fakeJSX + liveJSX;
         }
@@ -83,7 +83,7 @@ const getCollections = async() => {
                                     <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
                                 </h4>
                             </div>
-                            <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT WALLET</button>
+                            <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
                             </div>`
             pastJSX = fakeJSX + pastJSX;
         }
