@@ -77,7 +77,7 @@
         "image": "https://pbs.twimg.com/profile_images/1467804136255238146/UzWetONg_400x400.jpg",
         "website": "https://www.intree.com/",
         "twitter": "https://twitter.com/intreeclub",
-        "max-slots": 10,
+        "max-slots": 2,
         "discord-required": "true"
     },
     "10": {
