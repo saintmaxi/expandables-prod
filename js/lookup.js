@@ -113,7 +113,7 @@ const getBambooEarnedByID = async() => {
 };
 
 var projectToWL = new Map();
-
+var myWL = [];
 var collectionsData;
 
 const loadCollectionsData = async() => {
@@ -137,11 +137,24 @@ const loadCollectionsData = async() => {
                 winners.push(`${events[i].args._address}`);
             }
         }
+        if (winners.includes((await getAddress()))) {
+            myWL.push(projectName);
+        }
         projectToWL.set(projectName, winners);
         $("#wl-select").append(`<option value="${projectName}">${projectName}</option>`);
         if (i == 0) {
             selectWL(projectName);
         }
+    }
+}
+
+const loadMyWL = async() => {
+    if (myWL.length == 0) {
+        $("#your-wl-spots").html("No spots purchased!");
+    }
+    else {
+        let wlString = myWL.join("<br>");
+        $("#your-wl-spots").html(wlString);
     }
 }
 
@@ -247,6 +260,7 @@ ethereum.on("accountsChanged", async(accounts_)=>{
 window.onload = async()=>{
     await updateInfo();
     await loadCollectionsData();
+    await loadMyWL();
 };
 
 window.onunload = async()=>{
