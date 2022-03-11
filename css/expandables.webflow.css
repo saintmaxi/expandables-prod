@@ -10,12 +10,31 @@
   background: white;
   color: black;
   cursor: pointer;
+  border: 1px solid black;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 .refresh-cache svg {
   display: block;
   width: 20px;
   margin-right: 10px;
+}
+
+.bamboo-balance-float {
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  font-size: 1.5vw;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.bamboo-balance-float img {
+  margin-left: 10px;
 }
 
 .w-layout-grid {
@@ -1833,6 +1852,28 @@ p {
 }
 
 @media screen and (max-width: 767px) {
+
+  .bamboo-balance-float {
+    position: fixed;
+    left: 10%;
+    bottom: 30px;
+    width: 80%;
+    margin: auto;
+    font-size: 2.5vh;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .bamboo-balance-float img {
+    margin-left: 10px;
+  }
 
   .refresh-cache {
     display: none;

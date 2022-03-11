@@ -405,6 +405,7 @@ window.onload = async() => {
         await updateInfo();
         await loadCollectionsData();
         await loadCollections();
+        $("#bamboo-balance").html((formatEther(await bamboo.balanceOf((await getAddress())))));
     }
 };
 
