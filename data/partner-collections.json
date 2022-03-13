@@ -115,5 +115,14 @@
         "twitter": "https://twitter.com/smolsharks",
         "max-slots": 10,
         "discord-required": "true"
+    },
+    "15": {
+        "name": "Everai",
+        "description": "Heroes of the Metaverse",
+        "image": "https://pbs.twimg.com/profile_images/1491476311587573760/FDdj52Ak_400x400.png",
+        "website": "https://www.everai.xyz/",
+        "twitter": "https://twitter.com/TheEverai",
+        "max-slots": 3,
+        "discord-required": "true"
     }
 }
