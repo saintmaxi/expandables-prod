@@ -124,5 +124,32 @@
         "twitter": "https://twitter.com/TheEverai",
         "max-slots": 3,
         "discord-required": "true"
+    },
+    "16": {
+        "name": "Meta Survivors Club (Refill)",
+        "description": "8 different characters, 3D NFT for Metaverse, Created by Global Top tier Designers(from Blizzard, EA, and Sony Entertainment).",
+        "image": "https://pbs.twimg.com/profile_images/1487736464742170624/osM8XyT6_400x400.jpg",
+        "website": "https://www.meta-survivors.com/",
+        "twitter": "https://twitter.com/Meta_Survivors",
+        "max-slots": 30,
+        "discord-required": "true"
+    },
+    "17": {
+        "name": "The Drones by Katsu",
+        "description": "The Drones by World Famous Graffiti Artist KATSU",
+        "image": "https://pbs.twimg.com/profile_images/1499117391720161287/8_qF18Hv_400x400.png",
+        "website": "https://thedrones.xyz/",
+        "twitter": "https://twitter.com/TheDronesNFT",
+        "max-slots": 15,
+        "discord-required": "true"
+    },
+    "18": {
+        "name": "Martian Premier League",
+        "description": "Come for the art, stay for the game. Fully Doxxed Team.",
+        "image": "https://pbs.twimg.com/profile_images/1489176338984488961/xLQlObV__400x400.jpg",
+        "website": "https://www.martianpremierleague.com/",
+        "twitter": "https://twitter.com/MartianPLeague",
+        "max-slots": 15,
+        "discord-required": "true"
     }
 }
