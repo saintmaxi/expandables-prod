@@ -119,6 +119,7 @@ var collectionsData;
 const loadCollectionsData = async() => {
     collectionsData = await $.getJSON('./data/partner-collections.json');
     let projectIDs = Object.keys(collectionsData);
+    let userAddress = await getAddress();
     for (let i = 0; i < projectIDs.length; i++) {
         let id = Number(projectIDs[i]);
         let projectName = collectionsData[String(id)].name;
@@ -127,6 +128,9 @@ const loadCollectionsData = async() => {
             let eventFilterName = market.filters.PurchasedWithName(id);
             let eventsName = await market.queryFilter(eventFilterName);
             for (let i = 0; i < eventsName.length; i++) {
+                if (eventsName[i].args._address == userAddress) {
+                    myWL.push(projectName);
+                }
                 winners.push(`${eventsName[i].args.name} - ${eventsName[i].args._address}`);
             }
         }
@@ -134,6 +138,9 @@ const loadCollectionsData = async() => {
             let eventFilter = market.filters.Purchase(id);
             let events = await market.queryFilter(eventFilter);
             for (let i = 0; i < events.length; i++) {
+                if (events[i].args._address == userAddress) {
+                    myWL.push(projectName);
+                }
                 winners.push(`${events[i].args._address}`);
             }
         }

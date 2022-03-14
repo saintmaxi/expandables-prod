@@ -71,15 +71,6 @@
         "max-slots": 4,
         "discord-required": "false"
     },
-    "9": {
-        "name": "Intree club",
-        "description": "Take part in a tech start-up adventure. Intree Club NFT is an interactive universe where you and like-minded people decide how it will play out",
-        "image": "https://pbs.twimg.com/profile_images/1467804136255238146/UzWetONg_400x400.jpg",
-        "website": "https://www.intree.com/",
-        "twitter": "https://twitter.com/intreeclub",
-        "max-slots": 10,
-        "discord-required": "true"
-    },
     "10": {
         "name": "Meta Survivors Club",
         "description": "8 different characters, 3D NFT for Metaverse, Created by Global Top tier Designers(from Blizzard, EA, and Sony Entertainment)",
@@ -96,6 +87,42 @@
         "website": "https://coolpigz.io/",
         "twitter": "https://twitter.com/TheCoolPigz",
         "max-slots": 5,
+        "discord-required": "true"
+    },
+    "12": {
+        "name": "Multiverse VM",
+        "description": "The open metaverse for all NFTs, Single Player Alpha Soon!",
+        "image": "https://pbs.twimg.com/profile_images/1485103299548553226/Jv1PmpU2_400x400.jpg",
+        "website": "https://www.multiversevm.com/",
+        "twitter": "https://twitter.com/MultiverseVM",
+        "max-slots": 5,
+        "discord-required": "true"
+    },
+    "13": {
+        "name": "PaperHandsGame",
+        "description": "Paint 2 Earn",
+        "image": "https://pbs.twimg.com/profile_images/1500203131421937666/cfBzSK68_400x400.jpg",
+        "website": "https://paperhands.game/",
+        "twitter": "https://twitter.com/PaperHandsGame",
+        "max-slots": 25,
+        "discord-required": "true"
+    },
+    "14": {
+        "name": "Smol Sharks",
+        "description": "There is something in the water... ",
+        "image": "https://pbs.twimg.com/profile_images/1499009474815795206/HX4M82pI_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/smolsharks",
+        "max-slots": 10,
+        "discord-required": "true"
+    },
+    "15": {
+        "name": "Everai",
+        "description": "Heroes of the Metaverse",
+        "image": "https://pbs.twimg.com/profile_images/1491476311587573760/FDdj52Ak_400x400.png",
+        "website": "https://www.everai.xyz/",
+        "twitter": "https://twitter.com/TheEverai",
+        "max-slots": 3,
         "discord-required": "true"
     }
 }
