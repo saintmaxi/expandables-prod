@@ -151,5 +151,14 @@
         "twitter": "https://twitter.com/MartianPLeague",
         "max-slots": 15,
         "discord-required": "true"
+    },
+    "19": {
+        "name": "Alienverse",
+        "description": "A collection of 5555 ultra realistic 3D art pieces",
+        "image": "https://pbs.twimg.com/profile_images/1501934282998042633/L2bQvFxU_400x400.jpg",
+        "website": "https://www.joinalienverse.io/",
+        "twitter": "https://twitter.com/JoinAlienverse",
+        "max-slots": 25,
+        "discord-required": "true"
     }
 }
