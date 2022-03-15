@@ -1870,6 +1870,7 @@ p {
     color: black;
     border: 1px solid black;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    z-index: 999999;
   }
   .bamboo-balance-float img {
     margin-left: 10px;
