@@ -319,9 +319,7 @@ const updateCurrentChain = async() => {
 
 provider.on("network", async(newNetwork, oldNetwork) => {
         if (oldNetwork) {
-            $("#refresh-notification").remove();
-            await updateCurrentChain();
-            await updateStakingInfo();
+            location.reload();
         }
     });
 
@@ -450,6 +448,7 @@ const updateInfo = async () => {
 };
 
 setInterval(async()=>{
+    await updateCurrentChain();
     await updateInfo();
     await updateApprovedStatus();
     await getPendingBambooBalance();
@@ -466,6 +465,7 @@ ethereum.on("accountsChanged", async(accounts_)=>{
 });
 
 window.onload = async()=>{
+    await updateCurrentChain();
     await updateInfo();
     await fixHeight();
     await updateApprovedStatus();
