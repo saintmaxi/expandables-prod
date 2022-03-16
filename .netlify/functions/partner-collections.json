@@ -98,15 +98,6 @@
         "max-slots": 5,
         "discord-required": "true"
     },
-    "13": {
-        "name": "PaperHandsGame",
-        "description": "Paint 2 Earn",
-        "image": "https://pbs.twimg.com/profile_images/1500203131421937666/cfBzSK68_400x400.jpg",
-        "website": "https://paperhands.game/",
-        "twitter": "https://twitter.com/PaperHandsGame",
-        "max-slots": 25,
-        "discord-required": "true"
-    },
     "14": {
         "name": "Smol Sharks",
         "description": "There is something in the water... ",
