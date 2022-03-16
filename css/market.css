@@ -428,7 +428,7 @@ h4 {
     animation: blinker 3s linear infinite;
 }
 
-#scroll-indicator-live, #scroll-indicator-past {
+#scroll-indicator-live, #scroll-indicator-past, #scroll-indicator {
     -webkit-animation: blinker 1.3s infinite;
     animation: blinker 1.3s infinite;
     color: white !important;
