@@ -133,23 +133,5 @@
         "twitter": "https://twitter.com/MartianPLeague",
         "max-slots": 15,
         "discord-required": "true"
-    },
-    "19": {
-        "name": "Apex Wolves",
-        "description": "The ApexWolves are watching",
-        "image": "https://pbs.twimg.com/profile_images/1504525567877541901/VzdZz3kY_400x400.jpg",
-        "website": "https://www.apexwolves.io/",
-        "twitter": "https://twitter.com/0xAWNFT",
-        "max-slots": 15,
-        "discord-required": "true"
-    },
-    "20": {
-        "name": "Baby Mouse #1933 raffle tickets",
-        "description": "These are raffle tickets to win baby mouse #1933. This sale ends in 5 days! Raffle tickets are limited to 1 per wallet!",
-        "image": "https://openseauserdata.com/files/934e06c121a3cf0d7c9aa4ab544ffa07.svg",
-        "website": "https://anonymice.com/",
-        "twitter": "https://twitter.com/AnonymiceNFT",
-        "max-slots": 999,
-        "discord-required": "false"
     }
 }
