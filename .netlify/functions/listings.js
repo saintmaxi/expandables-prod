@@ -51,7 +51,7 @@ const getCollections = async() => {
                                 <img class="collection-img" src="${collection["image"]}">
                                 <div class="collection-info">
                                     <h3><a class="clickable link" href="${collection["website"]}" target="_blank" style="text-decoration: none;">${collection["name"]}⬈</a></h3>
-                                    <h4>${collectionPrice} <img src="${bambooImgURL}" class="coco-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
+                                    <h4>${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
                                     <div class="inside-text collection-description">
                                     ${collection["description"]}
                                     </div>
@@ -69,7 +69,7 @@ const getCollections = async() => {
                                 <img class="collection-img" src="${collection["image"]}">
                                 <div class="collection-info">
                                     <h3><a class="clickable link" href="${collection["website"]}" target="_blank" style="text-decoration: none;">${collection["name"]}⬈</a></h3>
-                                    <h4>${collectionPrice} <img src="${bambooImgURL}" class="coco-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
+                                    <h4>${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
                                     <div class="inside-text collection-description">
                                     ${collection["description"]}
                                     </div>
