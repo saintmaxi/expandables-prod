@@ -56,7 +56,7 @@ const getCollections = async() => {
                                     ${collection["description"]}
                                     </div>
                                 </div>
-                                <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT WALLET</button>
+                                <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
                                 </div>`
                 liveJSX = fakeJSX + liveJSX;
             }
@@ -74,7 +74,7 @@ const getCollections = async() => {
                                     ${collection["description"]}
                                     </div>
                                 </div>
-                                <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT WALLET</button>
+                                <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
                                 </div>`
                 pastJSX = fakeJSX + pastJSX;
             }
