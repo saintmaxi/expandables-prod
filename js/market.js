@@ -183,6 +183,16 @@ const purchase  = async(id) => {
     }
 }
 
+const splitArrayToChunks = (array_, chunkSize_) => {
+    let _arrays = Array(Math.ceil(array_.length / chunkSize_))
+    .fill()
+    .map((_, index) => index * chunkSize_)
+    .map((begin) => array_.slice(begin, begin + chunkSize_));
+
+    console.log(_arrays);
+    return _arrays;
+};
+
 var loadedCollections = false;
 
 const loadCollections = async() => {
@@ -191,104 +201,206 @@ const loadCollections = async() => {
     let numLive = 0;
     let numPast = 0;
     let projectIDs = Object.keys(collectionsData);
-    for (let i = 0; i < projectIDs.length; i++) {
-        // WL data from contract
-        let id = Number(projectIDs[i]);
-        let WLinfo = await market.getWhitelist(id);
-        let collectionPrice = Number(formatEther(WLinfo.price));
+    const chunks = splitArrayToChunks(projectIDs, 5)
+    for (const chunk of chunks) {
+        await Promise.all( chunk.map( async(i) => {
+            // WL data from contract
+            let id = Number(i);
+            let WLinfo = await market.getWhitelist(id);
+            let collectionPrice = Number(formatEther(WLinfo.price));
 
-        // Data from JSON file
-        let collection = collectionsData[String(id)];
-        let maxSlots = collection["max-slots"];
-        let minted = maxSlots - WLinfo.amount;
-        let discordRequired = (collectionsData[String(id)]["discord-required"] == "true");
+            // Data from JSON file
+            let collection = collectionsData[String(id)];
+            let maxSlots = collection["max-slots"];
+            let minted = maxSlots - WLinfo.amount;
+            let discordRequired = (collectionsData[String(id)]["discord-required"] == "true");
 
-        let winners = [];
-        if (discordRequired) {
-            let eventFilterName = market.filters.PurchasedWithName(id);
-            let eventsName = await market.queryFilter(eventFilterName);
-            for (let i = 0; i < eventsName.length; i++) {
-                winners.push(`${eventsName[i].args._address}`);
-            }
-        }
-        else {
-            let eventFilter = market.filters.Purchase(id);
-            let events = await market.queryFilter(eventFilter);
-            for (let i = 0; i < events.length; i++) {
-                winners.push(`${events[i].args._address}`);
-            }
-        }
-
-        let link = collection["website"] != "" ? `href="${collection["website"]}" target="_blank"` : "nohref";
-        let arrow = collection["website"] != "" ? "⬈" : "";
-
-        if (minted != maxSlots) {
-            numLive += 1;
-            let button;
-            if (winners.includes(await getAddress())) {
-                button = `<button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">BOUGHT!</button>`;
+            let winners = [];
+            if (discordRequired) {
+                let eventFilterName = market.filters.PurchasedWithName(id);
+                let eventsName = await market.queryFilter(eventFilterName);
+                for (let i = 0; i < eventsName.length; i++) {
+                    winners.push(`${eventsName[i].args._address}`);
+                }
             }
             else {
-                if (discordRequired) {
-                    button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="promptForDiscord(${id})">BUY</button>`;
-                }
-                else {
-                    button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="purchase(${id})">BUY</button>`;
+                let eventFilter = market.filters.Purchase(id);
+                let events = await market.queryFilter(eventFilter);
+                for (let i = 0; i < events.length; i++) {
+                    winners.push(`${events[i].args._address}`);
                 }
             }
-            let fakeJSX = `<div class="partner-collection" id="project-${id}">
-                            <a href="${collection["twitter"]}" target="_blank">
-                                <img class="collection-twitter" src="./images/twitter-white.png">
-                            </a>
-                            <div class="collection-img-container">
-                                <img class="collection-img" src="${collection["image"]}">
-                                <h4 class="collection-price-div">
-                                    <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
-                                </h4>
-                            </div>
-                            <br class="hide-on-mobile">
-                            <br class="hide-on-mobile">
-                            <div class="collection-info">
-                                <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
-                                <div class="inside-text collection-description">
-                                ${collection["description"]}
+
+            let link = collection["website"] != "" ? `href="${collection["website"]}" target="_blank"` : "nohref";
+            let arrow = collection["website"] != "" ? "⬈" : "";
+
+            if (minted != maxSlots) {
+                numLive += 1;
+                let button;
+                if (winners.includes(await getAddress())) {
+                    button = `<button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">BOUGHT!</button>`;
+                }
+                else {
+                    if (discordRequired) {
+                        button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="promptForDiscord(${id})">BUY</button>`;
+                    }
+                    else {
+                        button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="purchase(${id})">BUY</button>`;
+                    }
+                }
+                let fakeJSX = `<div class="partner-collection" id="project-${id}">
+                                <a href="${collection["twitter"]}" target="_blank">
+                                    <img class="collection-twitter" src="./images/twitter-white.png">
+                                </a>
+                                <div class="collection-img-container">
+                                    <img class="collection-img" src="${collection["image"]}">
+                                    <h4 class="collection-price-div">
+                                        <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
+                                    </h4>
                                 </div>
-                                <h4 class="num-bought-div">
-                                    <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
-                                </h4>
-                            </div>
-                            ${button}
-                            </div>`
-            liveJSX = fakeJSX + liveJSX;
-        }
-        else {
-            numPast +=1;
-            let fakeJSX = `<div class="partner-collection" id="project-${id}">
-                            <a href="${collection["twitter"]}" target="_blank">
-                                <img class="collection-twitter" src="./images/twitter-white.png">
-                            </a>
-                            <div class="collection-img-container">
-                                <img class="collection-img" src="${collection["image"]}">
-                                <h4 class="collection-price-div">
-                                    <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
-                                </h4>
-                            </div>
-                            <br class="hide-on-mobile">
-                            <br class="hide-on-mobile">
-                            <div class="collection-info">
-                                <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
-                                <div class="inside-text collection-description">
-                                ${collection["description"]}
+                                <br class="hide-on-mobile">
+                                <br class="hide-on-mobile">
+                                <div class="collection-info">
+                                    <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
+                                    <div class="inside-text collection-description">
+                                    ${collection["description"]}
+                                    </div>
+                                    <h4 class="num-bought-div">
+                                        <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
+                                    </h4>
                                 </div>
-                                <h4 class="num-bought-div">
-                                    <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
-                                </h4>
-                            </div>
-                            <button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">SOLD OUT</button>
-                            </div>`
-        pastJSX = fakeJSX + pastJSX;
-        }
+                                ${button}
+                                </div>`
+                liveJSX = fakeJSX + liveJSX;
+            }
+            else {
+                numPast +=1;
+                let fakeJSX = `<div class="partner-collection" id="project-${id}">
+                                <a href="${collection["twitter"]}" target="_blank">
+                                    <img class="collection-twitter" src="./images/twitter-white.png">
+                                </a>
+                                <div class="collection-img-container">
+                                    <img class="collection-img" src="${collection["image"]}">
+                                    <h4 class="collection-price-div">
+                                        <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
+                                    </h4>
+                                </div>
+                                <br class="hide-on-mobile">
+                                <br class="hide-on-mobile">
+                                <div class="collection-info">
+                                    <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
+                                    <div class="inside-text collection-description">
+                                    ${collection["description"]}
+                                    </div>
+                                    <h4 class="num-bought-div">
+                                        <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
+                                    </h4>
+                                </div>
+                                <button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">SOLD OUT</button>
+                                </div>`
+            pastJSX = fakeJSX + pastJSX;
+            }
+        }));
     }
+
+    // for (let i = 0; i < projectIDs.length; i++) {
+    //     // WL data from contract
+    //     let id = Number(projectIDs[i]);
+    //     let WLinfo = await market.getWhitelist(id);
+    //     let collectionPrice = Number(formatEther(WLinfo.price));
+
+    //     // Data from JSON file
+    //     let collection = collectionsData[String(id)];
+    //     let maxSlots = collection["max-slots"];
+    //     let minted = maxSlots - WLinfo.amount;
+    //     let discordRequired = (collectionsData[String(id)]["discord-required"] == "true");
+
+    //     let winners = [];
+    //     if (discordRequired) {
+    //         let eventFilterName = market.filters.PurchasedWithName(id);
+    //         let eventsName = await market.queryFilter(eventFilterName);
+    //         for (let i = 0; i < eventsName.length; i++) {
+    //             winners.push(`${eventsName[i].args._address}`);
+    //         }
+    //     }
+    //     else {
+    //         let eventFilter = market.filters.Purchase(id);
+    //         let events = await market.queryFilter(eventFilter);
+    //         for (let i = 0; i < events.length; i++) {
+    //             winners.push(`${events[i].args._address}`);
+    //         }
+    //     }
+
+    //     let link = collection["website"] != "" ? `href="${collection["website"]}" target="_blank"` : "nohref";
+    //     let arrow = collection["website"] != "" ? "⬈" : "";
+
+    //     if (minted != maxSlots) {
+    //         numLive += 1;
+    //         let button;
+    //         if (winners.includes(await getAddress())) {
+    //             button = `<button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">BOUGHT!</button>`;
+    //         }
+    //         else {
+    //             if (discordRequired) {
+    //                 button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="promptForDiscord(${id})">BUY</button>`;
+    //             }
+    //             else {
+    //                 button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="purchase(${id})">BUY</button>`;
+    //             }
+    //         }
+    //         let fakeJSX = `<div class="partner-collection" id="project-${id}">
+    //                         <a href="${collection["twitter"]}" target="_blank">
+    //                             <img class="collection-twitter" src="./images/twitter-white.png">
+    //                         </a>
+    //                         <div class="collection-img-container">
+    //                             <img class="collection-img" src="${collection["image"]}">
+    //                             <h4 class="collection-price-div">
+    //                                 <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
+    //                             </h4>
+    //                         </div>
+    //                         <br class="hide-on-mobile">
+    //                         <br class="hide-on-mobile">
+    //                         <div class="collection-info">
+    //                             <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
+    //                             <div class="inside-text collection-description">
+    //                             ${collection["description"]}
+    //                             </div>
+    //                             <h4 class="num-bought-div">
+    //                                 <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
+    //                             </h4>
+    //                         </div>
+    //                         ${button}
+    //                         </div>`
+    //         liveJSX = fakeJSX + liveJSX;
+    //     }
+    //     else {
+    //         numPast +=1;
+    //         let fakeJSX = `<div class="partner-collection" id="project-${id}">
+    //                         <a href="${collection["twitter"]}" target="_blank">
+    //                             <img class="collection-twitter" src="./images/twitter-white.png">
+    //                         </a>
+    //                         <div class="collection-img-container">
+    //                             <img class="collection-img" src="${collection["image"]}">
+    //                             <h4 class="collection-price-div">
+    //                                 <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
+    //                             </h4>
+    //                         </div>
+    //                         <br class="hide-on-mobile">
+    //                         <br class="hide-on-mobile">
+    //                         <div class="collection-info">
+    //                             <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
+    //                             <div class="inside-text collection-description">
+    //                             ${collection["description"]}
+    //                             </div>
+    //                             <h4 class="num-bought-div">
+    //                                 <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
+    //                             </h4>
+    //                         </div>
+    //                         <button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">SOLD OUT</button>
+    //                         </div>`
+    //     pastJSX = fakeJSX + pastJSX;
+    //     }
+    // }
     $("#live-collections").empty();
     $("#past-collections").empty();
     $("#live-collections").append(liveJSX);

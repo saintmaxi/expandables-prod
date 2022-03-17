@@ -13,80 +13,72 @@ const market = new ethers.Contract(marketAddress, marketAbi(), provider);
 
 var collectionsData = require("./partner-collections.json");
 
+const splitArrayToChunks = (array_, chunkSize_) => {
+    let _arrays = Array(Math.ceil(array_.length / chunkSize_))
+    .fill()
+    .map((_, index) => index * chunkSize_)
+    .map((begin) => array_.slice(begin, begin + chunkSize_));
+
+    console.log(_arrays);
+    return _arrays;
+};
+
 const getCollections = async() => {
     let liveJSX = "";
     let pastJSX = "";
     let numLive = 0;
     let numPast = 0;
     let projectIDs = Object.keys(collectionsData);
-    for (let i = 0; i < projectIDs.length; i++) {
-        // WL data from contract
-        let id = Number(projectIDs[i]);
-        let WLinfo = await market.getWhitelist(id);
-        let collectionPrice = Number(ethers.utils.formatEther(WLinfo.price));
+    const chunks = splitArrayToChunks(projectIDs, 5)
+    for (const chunk of chunks) {
+        await Promise.all( chunk.map( async(i) => {
+            // WL data from contract
+            let WLinfo = await market.getWhitelist(id);
 
-        // Data from JSON file
-        let collection = collectionsData[String(id)];
-        let maxSlots = collection["max-slots"];
-        let minted = maxSlots - WLinfo.amount;
-
-        let link = collection["website"] != "" ? `href="${collection["website"]}" target="_blank"` : "nohref";
-        let arrow = collection["website"] != "" ? "⬈" : "";
-
-        if (minted != maxSlots) {
-            numLive += 1;
-            let fakeJSX = `<div class="partner-collection" id="project-${id}">
-                            <a href="${collection["twitter"]}" target="_blank">
-                                <img class="collection-twitter" src="./images/twitter-white.png">
-                            </a>
-                            <div class="collection-img-container">
+            let collectionPrice = Number(formatEther(WLinfo.price));
+    
+            // Data from JSON file
+            let collection = collectionsData[String(id)];
+            let maxSlots = collection["max-slots"];
+            let minted = maxSlots - WLinfo.amount;
+    
+            if (minted != maxSlots) {
+                numLive += 1;
+                let fakeJSX = `<div class="partner-collection" id="project-${id}">
+                                <a href="${collection["twitter"]}" target="_blank">
+                                    <img class="collection-twitter" src="./images/twitter-white.png">
+                                </a>
                                 <img class="collection-img" src="${collection["image"]}">
-                                <h4 class="collection-price-div">
-                                    <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
-                                </h4>
-                            </div>
-                            <br class="hide-on-mobile">
-                            <br class="hide-on-mobile">
-                            <div class="collection-info">
-                            <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
-                                <div class="inside-text collection-description">
-                                ${collection["description"]}
+                                <div class="collection-info">
+                                    <h3><a class="clickable link" href="${collection["website"]}" target="_blank" style="text-decoration: none;">${collection["name"]}⬈</a></h3>
+                                    <h4>${collectionPrice} <img src="${cocoImgURL}" class="coco-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
+                                    <div class="inside-text collection-description">
+                                    ${collection["description"]}
+                                    </div>
                                 </div>
-                                <h4 class="num-bought-div">
-                                    <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
-                                </h4>
-                            </div>
-                            <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
-                            </div>`
-            liveJSX = fakeJSX + liveJSX;
-        }
-        else {
-            numPast +=1;
-            let fakeJSX = `<div class="partner-collection" id="project-${id}">
-                            <a href="${collection["twitter"]}" target="_blank">
-                                <img class="collection-twitter" src="./images/twitter-white.png">
-                            </a>
-                            <div class="collection-img-container">
+                                <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT WALLET</button>
+                                </div>`
+                liveJSX = fakeJSX + liveJSX;
+            }
+            else {
+                numPast += 1;
+                let fakeJSX = `<div class="partner-collection" id="project-${id}">
+                                <a href="${collection["twitter"]}" target="_blank">
+                                    <img class="collection-twitter" src="./images/twitter-white.png">
+                                </a>
                                 <img class="collection-img" src="${collection["image"]}">
-                                <h4 class="collection-price-div">
-                                    <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
-                                </h4>
-                            </div>
-                            <br class="hide-on-mobile">
-                            <br class="hide-on-mobile">
-                            <div class="collection-info">
-                            <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
-                                <div class="inside-text collection-description">
-                                ${collection["description"]}
+                                <div class="collection-info">
+                                    <h3><a class="clickable link" href="${collection["website"]}" target="_blank" style="text-decoration: none;">${collection["name"]}⬈</a></h3>
+                                    <h4>${collectionPrice} <img src="${cocoImgURL}" class="coco-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
+                                    <div class="inside-text collection-description">
+                                    ${collection["description"]}
+                                    </div>
                                 </div>
-                                <h4 class="num-bought-div">
-                                    <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
-                                </h4>
-                            </div>
-                            <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
-                            </div>`
-            pastJSX = fakeJSX + pastJSX;
-        }
+                                <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT WALLET</button>
+                                </div>`
+                pastJSX = fakeJSX + pastJSX;
+            }
+        }));
     }
 
     return { 
