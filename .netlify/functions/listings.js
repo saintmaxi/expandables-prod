@@ -35,7 +35,7 @@ const getCollections = async() => {
             // WL data from contract
             let id = Number(i);
             let WLinfo = await market.getWhitelist(id);
-            let collectionPrice = Number(formatEther(WLinfo.price));
+            let collectionPrice = Number(ethers.utils.formatEther(WLinfo.price));
     
             // Data from JSON file
             let collection = collectionsData[String(id)];
