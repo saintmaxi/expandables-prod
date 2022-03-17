@@ -89,6 +89,11 @@ const checkBambooApproval = async() => {
     }
 };
 
+const getBambooBalance = async()=>{
+    let bambooBalance = (formatEther(await bamboo.balanceOf((await getAddress()))));
+    $("#bamboo-balance").html(bambooBalance);
+};
+
 const promptForDiscord = async(id) => {
     if (!($("#discord-popup").length)) {
         let fakeJSX = `<div id="discord-popup">
@@ -419,6 +424,7 @@ const updateInfo = async () => {
 
 setInterval( async() => {
     await updateCurrentChain();
+    await getBambooBalance();
     await updateInfo();
     if (loadedCollections) {
         await updateSupplies();
@@ -447,7 +453,7 @@ window.onload = async() => {
         await updateInfo();
         await loadCollectionsData();
         await loadCollections();
-        $("#bamboo-balance").html((formatEther(await bamboo.balanceOf((await getAddress())))));
+        await getBambooBalance();
     }
 };
 
