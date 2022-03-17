@@ -33,8 +33,8 @@ const getCollections = async() => {
     for (const chunk of chunks) {
         await Promise.all( chunk.map( async(i) => {
             // WL data from contract
+            let id = Number(i);
             let WLinfo = await market.getWhitelist(id);
-
             let collectionPrice = Number(formatEther(WLinfo.price));
     
             // Data from JSON file
