@@ -191,6 +191,7 @@ const splitArrayToChunks = (array_, chunkSize_) => {
 var loadedCollections = false;
 
 const loadCollections = async() => {
+    let userAddress = await getAddress();
     let liveJSX = "";
     let pastJSX = "";
     let numLive = 0;
@@ -234,7 +235,7 @@ const loadCollections = async() => {
             if (minted != maxSlots) {
                 numLive += 1;
                 let button;
-                if (winners.includes(await getAddress())) {
+                if (winners.includes(userAddress)) {
                     button = `<button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">BOUGHT!</button>`;
                 }
                 else {
