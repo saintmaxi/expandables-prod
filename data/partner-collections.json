@@ -151,5 +151,14 @@
         "twitter": "https://twitter.com/AnonymiceNFT",
         "max-slots": 999,
         "discord-required": "false"
+    },
+    "22": {
+        "name": "OtterClam",
+        "description": "A DAO-governed Land Where NFTs Make Finance Fun",
+        "image": "https://pbs.twimg.com/profile_images/1479776039144460291/12GGywyL_400x400.jpg",
+        "website": "https://www.otterclam.finance/#/",
+        "twitter": "https://twitter.com/otterclam",
+        "max-slots": 10,
+        "discord-required": "false"
     }
 }
