@@ -211,6 +211,7 @@ const loadCollections = async() => {
             let collection = collectionsData[String(id)];
             let maxSlots = collection["max-slots"];
             let minted = maxSlots - WLinfo.amount;
+            let display = collectionsData[String(id)]["display-on-market"] == "true" ? true : false;
             let discordRequired = (collectionsData[String(id)]["discord-required"] == "true");
 
             let winners = [];
@@ -231,72 +232,73 @@ const loadCollections = async() => {
 
             let link = collection["website"] != "" ? `href="${collection["website"]}" target="_blank"` : "nohref";
             let arrow = collection["website"] != "" ? "⬈" : "";
-
-            if (minted != maxSlots) {
-                numLive += 1;
-                let button;
-                if (winners.includes(userAddress)) {
-                    button = `<button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">BOUGHT!</button>`;
-                }
-                else {
-                    if (discordRequired) {
-                        button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="promptForDiscord(${id})">BUY</button>`;
+            if (display) {
+                if (minted != maxSlots) {
+                    numLive += 1;
+                    let button;
+                    if (winners.includes(userAddress)) {
+                        button = `<button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">BOUGHT!</button>`;
                     }
                     else {
-                        button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="purchase(${id})">BUY</button>`;
+                        if (discordRequired) {
+                            button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="promptForDiscord(${id})">BUY</button>`;
+                        }
+                        else {
+                            button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="purchase(${id})">BUY</button>`;
+                        }
                     }
+                    let fakeJSX = `<div class="partner-collection" id="project-${id}">
+                                    <a href="${collection["twitter"]}" target="_blank">
+                                        <img class="collection-twitter" src="./images/twitter-white.png">
+                                    </a>
+                                    <div class="collection-img-container">
+                                        <img class="collection-img" src="${collection["image"]}">
+                                        <h4 class="collection-price-div">
+                                            <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
+                                        </h4>
+                                    </div>
+                                    <br class="hide-on-mobile">
+                                    <br class="hide-on-mobile">
+                                    <div class="collection-info">
+                                        <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
+                                        <div class="inside-text collection-description">
+                                        ${collection["description"]}
+                                        </div>
+                                        <h4 class="num-bought-div">
+                                            <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
+                                        </h4>
+                                    </div>
+                                    ${button}
+                                    </div>`
+                    idToLiveJSX.set(id, fakeJSX);
                 }
-                let fakeJSX = `<div class="partner-collection" id="project-${id}">
-                                <a href="${collection["twitter"]}" target="_blank">
-                                    <img class="collection-twitter" src="./images/twitter-white.png">
-                                </a>
-                                <div class="collection-img-container">
-                                    <img class="collection-img" src="${collection["image"]}">
-                                    <h4 class="collection-price-div">
-                                        <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
-                                    </h4>
-                                </div>
-                                <br class="hide-on-mobile">
-                                <br class="hide-on-mobile">
-                                <div class="collection-info">
-                                    <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
-                                    <div class="inside-text collection-description">
-                                    ${collection["description"]}
+                else {
+                    numPast +=1;
+                    let fakeJSX = `<div class="partner-collection" id="project-${id}">
+                                    <a href="${collection["twitter"]}" target="_blank">
+                                        <img class="collection-twitter" src="./images/twitter-white.png">
+                                    </a>
+                                    <div class="collection-img-container">
+                                        <img class="collection-img" src="${collection["image"]}">
+                                        <h4 class="collection-price-div">
+                                            <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
+                                        </h4>
                                     </div>
-                                    <h4 class="num-bought-div">
-                                        <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
-                                    </h4>
-                                </div>
-                                ${button}
-                                </div>`
-                idToLiveJSX.set(id, fakeJSX);
-            }
-            else {
-                numPast +=1;
-                let fakeJSX = `<div class="partner-collection" id="project-${id}">
-                                <a href="${collection["twitter"]}" target="_blank">
-                                    <img class="collection-twitter" src="./images/twitter-white.png">
-                                </a>
-                                <div class="collection-img-container">
-                                    <img class="collection-img" src="${collection["image"]}">
-                                    <h4 class="collection-price-div">
-                                        <div class="collection-price">${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"></div>
-                                    </h4>
-                                </div>
-                                <br class="hide-on-mobile">
-                                <br class="hide-on-mobile">
-                                <div class="collection-info">
-                                    <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
-                                    <div class="inside-text collection-description">
-                                    ${collection["description"]}
+                                    <br class="hide-on-mobile">
+                                    <br class="hide-on-mobile">
+                                    <div class="collection-info">
+                                        <h3><a class="clickable link" ${link} style="text-decoration: none;">${collection["name"]}${arrow}</a></h3>
+                                        <div class="inside-text collection-description">
+                                        ${collection["description"]}
+                                        </div>
+                                        <h4 class="num-bought-div">
+                                            <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
+                                        </h4>
                                     </div>
-                                    <h4 class="num-bought-div">
-                                        <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
-                                    </h4>
-                                </div>
-                                <button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">SOLD OUT</button>
-                                </div>`
-                idToPastJSX.set(id, fakeJSX);
+                                    <button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">SOLD OUT</button>
+                                    </div>`
+                    idToPastJSX.set(id, fakeJSX);
+                }
             }
         }));
     }

@@ -43,42 +43,44 @@ const getCollections = async() => {
             let collection = collectionsData[String(id)];
             let maxSlots = collection["max-slots"];
             let minted = maxSlots - WLinfo.amount;
-    
-            if (minted != maxSlots) {
-                numLive += 1;
-                let fakeJSX = `<div class="partner-collection" id="project-${id}">
-                                <a href="${collection["twitter"]}" target="_blank">
-                                    <img class="collection-twitter" src="./images/twitter-white.png">
-                                </a>
-                                <img class="collection-img" src="${collection["image"]}">
-                                <div class="collection-info">
-                                    <h3><a class="clickable link" href="${collection["website"]}" target="_blank" style="text-decoration: none;">${collection["name"]}⬈</a></h3>
-                                    <h4>${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
-                                    <div class="inside-text collection-description">
-                                    ${collection["description"]}
+            let display = collectionsData[String(id)]["display-on-market"] == "true" ? true : false;
+            if (display) {
+                if (minted != maxSlots) {
+                    numLive += 1;
+                    let fakeJSX = `<div class="partner-collection" id="project-${id}">
+                                    <a href="${collection["twitter"]}" target="_blank">
+                                        <img class="collection-twitter" src="./images/twitter-white.png">
+                                    </a>
+                                    <img class="collection-img" src="${collection["image"]}">
+                                    <div class="collection-info">
+                                        <h3><a class="clickable link" href="${collection["website"]}" target="_blank" style="text-decoration: none;">${collection["name"]}⬈</a></h3>
+                                        <h4>${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
+                                        <div class="inside-text collection-description">
+                                        ${collection["description"]}
+                                        </div>
                                     </div>
-                                </div>
-                                <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
-                                </div>`
-                idToLiveJSX.set(id, fakeJSX);
-            }
-            else {
-                numPast += 1;
-                let fakeJSX = `<div class="partner-collection" id="project-${id}">
-                                <a href="${collection["twitter"]}" target="_blank">
-                                    <img class="collection-twitter" src="./images/twitter-white.png">
-                                </a>
-                                <img class="collection-img" src="${collection["image"]}">
-                                <div class="collection-info">
-                                    <h3><a class="clickable link" href="${collection["website"]}" target="_blank" style="text-decoration: none;">${collection["name"]}⬈</a></h3>
-                                    <h4>${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
-                                    <div class="inside-text collection-description">
-                                    ${collection["description"]}
+                                    <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
+                                    </div>`
+                    idToLiveJSX.set(id, fakeJSX);
+                }
+                else {
+                    numPast += 1;
+                    let fakeJSX = `<div class="partner-collection" id="project-${id}">
+                                    <a href="${collection["twitter"]}" target="_blank">
+                                        <img class="collection-twitter" src="./images/twitter-white.png">
+                                    </a>
+                                    <img class="collection-img" src="${collection["image"]}">
+                                    <div class="collection-info">
+                                        <h3><a class="clickable link" href="${collection["website"]}" target="_blank" style="text-decoration: none;">${collection["name"]}⬈</a></h3>
+                                        <h4>${collectionPrice} <img src="${bambooImgURL}" class="bamboo-icon"> <br> <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Purchased</h4>
+                                        <div class="inside-text collection-description">
+                                        ${collection["description"]}
+                                        </div>
                                     </div>
-                                </div>
-                                <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
-                                </div>`
-                idToPastJSX.set(id, fakeJSX);
+                                    <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
+                                    </div>`
+                    idToPastJSX.set(id, fakeJSX);
+                }
             }
         }));
     }
