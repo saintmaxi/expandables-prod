@@ -6,7 +6,8 @@
         "website": "",
         "twitter": "https://twitter.com/vSamurai_NFT",
         "max-slots": 20,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "1": {
         "name": "Embers",
@@ -15,7 +16,8 @@
         "website": "https://www.embersnft.com/",
         "twitter": "https://twitter.com/embersnft",
         "max-slots": 3,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "2": {
         "name": "Introverse",
@@ -24,7 +26,8 @@
         "website": "https://introverse.info/",
         "twitter": "https://twitter.com/_introverse_",
         "max-slots": 10,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "3": {
         "name": "Eyes of Ignolia",
@@ -33,7 +36,8 @@
         "website": "https://www.eyesofignolia.io/",
         "twitter": "https://twitter.com/eyesofignolia",
         "max-slots": 10,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "4": {
         "name": "Ape-X",
@@ -42,7 +46,8 @@
         "website": "https://ape-x.gg/",
         "twitter": "https://twitter.com/apexnftofficial",
         "max-slots": 25,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "5": {
         "name": "Illogics",
@@ -51,7 +56,8 @@
         "website": "",
         "twitter": "https://twitter.com/illogics",
         "max-slots": 10,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "6": {
         "name": "Kiwami",
@@ -60,7 +66,8 @@
         "website": "",
         "twitter": "https://twitter.com/kiwaminft",
         "max-slots": 5,
-        "discord-required": "false"
+        "discord-required": "false",
+        "display-on-market": "true"
     },
     "8": {
         "name": "War Kittens",
@@ -69,7 +76,8 @@
         "website": "https://warkittens.xyz/",
         "twitter": "https://twitter.com/0xWarKittens",
         "max-slots": 4,
-        "discord-required": "false"
+        "discord-required": "false",
+        "display-on-market": "true"
     },
     "10": {
         "name": "Meta Survivors Club",
@@ -78,7 +86,8 @@
         "website": "https://www.meta-survivors.com/",
         "twitter": "https://twitter.com/Meta_Survivors",
         "max-slots": 15,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "11": {
         "name": "Cool Pigz",
@@ -87,7 +96,8 @@
         "website": "https://coolpigz.io/",
         "twitter": "https://twitter.com/TheCoolPigz",
         "max-slots": 5,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "12": {
         "name": "Multiverse VM",
@@ -96,7 +106,8 @@
         "website": "https://www.multiversevm.com/",
         "twitter": "https://twitter.com/MultiverseVM",
         "max-slots": 5,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "14": {
         "name": "Smol Sharks",
@@ -105,7 +116,8 @@
         "website": "",
         "twitter": "https://twitter.com/smolsharks",
         "max-slots": 10,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "15": {
         "name": "Everai",
@@ -114,7 +126,8 @@
         "website": "https://www.everai.xyz/",
         "twitter": "https://twitter.com/TheEverai",
         "max-slots": 3,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "17": {
         "name": "The Drones by Katsu",
@@ -123,7 +136,8 @@
         "website": "https://thedrones.xyz/",
         "twitter": "https://twitter.com/TheDronesNFT",
         "max-slots": 15,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "18": {
         "name": "Martian Premier League",
@@ -132,7 +146,8 @@
         "website": "https://www.martianpremierleague.com/",
         "twitter": "https://twitter.com/MartianPLeague",
         "max-slots": 15,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "20": {
         "name": "Apex Wolves",
@@ -141,7 +156,8 @@
         "website": "https://www.apexwolves.io/",
         "twitter": "https://twitter.com/0xAWNFT",
         "max-slots": 15,
-        "discord-required": "true"
+        "discord-required": "true",
+        "display-on-market": "true"
     },
     "21": {
         "name": "Baby Mouse #1933 raffle tickets",
@@ -150,7 +166,8 @@
         "website": "https://anonymice.com/",
         "twitter": "https://twitter.com/AnonymiceNFT",
         "max-slots": 999,
-        "discord-required": "false"
+        "discord-required": "false",
+        "display-on-market": "true"
     },
     "22": {
         "name": "OtterClam",
@@ -159,6 +176,7 @@
         "website": "https://www.otterclam.finance/#/",
         "twitter": "https://twitter.com/otterclam",
         "max-slots": 10,
-        "discord-required": "false"
+        "discord-required": "false",
+        "display-on-market": "true"
     }
 }
