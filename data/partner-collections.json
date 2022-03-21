@@ -79,6 +79,16 @@
         "discord-required": "false",
         "display-on-market": "true"
     },
+    "9": {
+        "name": "Intree club",
+        "description": "Take part in a tech start-up adventure. Intree Club NFT is an interactive universe where you and like-minded people decide how it will play out",
+        "image": "https://pbs.twimg.com/profile_images/1467804136255238146/UzWetONg_400x400.jpg",
+        "website": "https://www.intree.com/",
+        "twitter": "https://twitter.com/intreeclub",
+        "max-slots": 2,
+        "discord-required": "true",
+        "display-on-market": "false"
+    },
     "10": {
         "name": "Meta Survivors Club",
         "description": "8 different characters, 3D NFT for Metaverse, Created by Global Top tier Designers(from Blizzard, EA, and Sony Entertainment)",
