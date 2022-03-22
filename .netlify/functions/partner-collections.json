@@ -237,7 +237,7 @@
         "twitter": "https://twitter.com/FurusMintClub",
         "max-slots": 10,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "27": {
         "name": "AdRunner NFT",
