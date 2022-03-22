@@ -217,7 +217,7 @@
         "twitter": "https://twitter.com/FurusMintClub",
         "max-slots": 15,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "25": {
         "name": "Antebellum Games refill",
@@ -237,7 +237,7 @@
         "twitter": "https://twitter.com/FurusMintClub",
         "max-slots": 10,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "27": {
         "name": "AdRunner NFT",
