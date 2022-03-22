@@ -217,7 +217,7 @@
         "twitter": "https://twitter.com/FurusMintClub",
         "max-slots": 15,
         "discord-required": "true",
-        "display-on-market": "false"
+        "display-on-market": "true"
     },
     "25": {
         "name": "Antebellum Games refill",
