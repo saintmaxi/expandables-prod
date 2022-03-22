@@ -187,7 +187,7 @@
         "twitter": "https://twitter.com/AnonymiceNFT",
         "max-slots": 999,
         "discord-required": "false",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "22": {
         "name": "OtterClam",
