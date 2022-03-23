@@ -268,5 +268,55 @@
         "max-slots": 25,
         "discord-required": "true",
         "display-on-market": "true"
+    },
+    "30": {
+        "name": "Dank Ducks REFILL",
+        "description": "The dankest NFTs around. Mints price: 0.02 ETH. Supply: 6969",
+        "image": "https://pbs.twimg.com/profile_images/1483161750333796356/qwM1MtPc_400x400.jpg",
+        "website": "https://dankducks.com/",
+        "twitter": "https://twitter.com/dankducksNFT",
+        "max-slots": 20,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "31": {
+        "name": "Irukandji",
+        "description": "The World of Irukandji. A face, a brand, and a lifestyle by https://twitter.com/yourbae",
+        "image": "https://pbs.twimg.com/profile_images/1505941066511314945/m-oYofK9_400x400.jpg",
+        "website": "https://www.irukandji.gg/",
+        "twitter": "https://twitter.com/irukandjiworld",
+        "max-slots": 10,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "32": {
+        "name": "Meta Space Babies",
+        "description": "An Exclusive club of 10,000 Meta Space Babies",
+        "image": "https://pbs.twimg.com/profile_images/1484043453831028743/OUXiuj--_400x400.png",
+        "website": "https://metaspacebabies.com/",
+        "twitter": "https://twitter.com/MSB_NFT",
+        "max-slots": 20,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "33": {
+        "name": "Shinobi Bunny NFT",
+        "description": "7,777 Shinobi Bunnies on Ethereum blockchain are coming soon to take over",
+        "image": "https://pbs.twimg.com/profile_images/1503775030588624907/TSMGFWTr_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/shinobibunnynft",
+        "max-slots": 15,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "34": {
+        "name": "Kuroro",
+        "description": "PVP focused NFT RPG",
+        "image": "https://pbs.twimg.com/profile_images/1497535764447567873/-Y6pmuB1_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/kurorobeast",
+        "max-slots": 3,
+        "discord-required": "true",
+        "display-on-market": "true"
     }
 }
