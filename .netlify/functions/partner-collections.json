@@ -348,5 +348,55 @@
         "max-slots": 2,
         "discord-required": "true",
         "display-on-market": "true"
+    },
+    "38": {
+        "name": "Ether Royale",
+        "description": "Revolutionizing NFT utility. First W2E NFT battle royale. Holders spectate as 8,888 soldiers battle for valuable NFTs & prizes",
+        "image": "https://pbs.twimg.com/profile_images/1482199240856117250/BgMZzPIN_400x400.jpg",
+        "website": "https://etherroyale.io/",
+        "twitter": "https://twitter.com/etherroyale",
+        "max-slots": 20,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "39": {
+        "name": "Racing Social Club",
+        "description": "A unique collection of 7878 Racers",
+        "image": "https://pbs.twimg.com/profile_images/1491906950937948175/wXSzT76g_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/racingsocialnft",
+        "max-slots": 10,
+        "discord-required": "false",
+        "display-on-market": "true"
+    },
+    "40": {
+        "name": "Last Hopium",
+        "description": "NFT utilities tied to 5 star hotels. Enter the Pantheon and become a MetaGod",
+        "image": "https://pbs.twimg.com/profile_images/1496157896073228300/83sbVAlD_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/lasthopium",
+        "max-slots": 8,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "41": {
+        "name": "ZOM NFT",
+        "description": "Zombie NFT collection and metaverse brand",
+        "image": "https://pbs.twimg.com/profile_images/1504633847387865089/DBSgEhQD_400x400.jpg",
+        "website": "https://www.zomnft.com/",
+        "twitter": "https://twitter.com/ZomNFT",
+        "max-slots": 20,
+        "discord-required": "false",
+        "display-on-market": "true"
+    },
+    "42": {
+        "name": "Zomby world",
+        "description": "Creating a new Universe w/ Community",
+        "image": "https://pbs.twimg.com/profile_images/1507458098977734657/PWUDQvmz_400x400.jpg",
+        "website": "https://www.zombyworld.io/",
+        "twitter": "https://twitter.com/ZombyWorld",
+        "max-slots": 5,
+        "discord-required": "true",
+        "display-on-market": "true"
     }
 }
