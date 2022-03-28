@@ -367,7 +367,7 @@
         "twitter": "https://twitter.com/racingsocialnft",
         "max-slots": 10,
         "discord-required": "false",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "40": {
         "name": "Last Hopium",
