@@ -478,5 +478,15 @@
         "max-slots": 10,
         "discord-required": "true",
         "display-on-market": "true"
+    },
+    "51": {
+        "name": "Multiverse VM Refill",
+        "description": "The open metaverse for all NFTs, Single Player Alpha Soon!",
+        "image": "https://pbs.twimg.com/profile_images/1485103299548553226/Jv1PmpU2_400x400.jpg",
+        "website": "https://www.multiversevm.com/",
+        "twitter": "https://twitter.com/MultiverseVM",
+        "max-slots": 10,
+        "discord-required": "false",
+        "display-on-market": "true"
     }
 }
