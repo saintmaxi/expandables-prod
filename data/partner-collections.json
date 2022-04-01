@@ -297,7 +297,7 @@
         "twitter": "https://twitter.com/MSB_NFT",
         "max-slots": 20,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "33": {
         "name": "Shinobi Bunny NFT",
@@ -467,7 +467,7 @@
         "twitter": "https://twitter.com/Astromallows",
         "max-slots": 10,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "50": {
         "name": "Antebellum Games 2nd Refill",
