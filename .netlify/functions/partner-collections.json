@@ -488,5 +488,55 @@
         "max-slots": 10,
         "discord-required": "false",
         "display-on-market": "true"
+    },
+    "52": {
+        "name": "Crypto Fighters",
+        "description": "The historical Play2Earn game from Jan 2018 is back!",
+        "image": "https://pbs.twimg.com/profile_images/1493342581450842119/Usbt-UqH_400x400.png",
+        "website": "https://www.cryptofighters.io/",
+        "twitter": "https://twitter.com/CryptoFighters",
+        "max-slots": 10,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "53": {
+        "name": "Neon Pantheon",
+        "description": "Experiential AR NFT project by fully doxxed team. Celebrating cultural diversity and inclusivity.",
+        "image": "https://pbs.twimg.com/profile_images/1491083015774081024/7ezJBFzl_400x400.jpg",
+        "website": "https://neonpantheon.com/",
+        "twitter": "https://twitter.com/NeonPantheonNFT",
+        "max-slots": 15,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "54": {
+        "name": "I'm Starving",
+        "description": "Do you have some food? On-chain story driven community game launching soon on Arbitrum",
+        "image": "https://pbs.twimg.com/profile_images/1501274986723647494/0N2wHTO6_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/ImStarvingNFT",
+        "max-slots": 10,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "55": {
+        "name": "Voxel Ville Avatars",
+        "description": "Voxel Ville is a digitized village that exists on the Ethereum blockchain in a metaverse very, very far away.",
+        "image": "https://pbs.twimg.com/profile_images/1445815366303715341/fFCib-kf_400x400.jpg",
+        "website": "https://www.voxelville.io/",
+        "twitter": "https://twitter.com/VilleVoxel",
+        "max-slots": 20,
+        "discord-required": "false",
+        "display-on-market": "true"
+    },
+    "56": {
+        "name": "Cyberia",
+        "description": "Metaverse-focused society with a gamified ecosystem and intricate hierarchy structure.",
+        "image": "https://pbs.twimg.com/profile_images/1479118021234806793/UoZIXNDl_400x400.jpg",
+        "website": "https://entercyberia.com/",
+        "twitter": "https://twitter.com/EnterCyberia",
+        "max-slots": 5,
+        "discord-required": "true",
+        "display-on-market": "true"
     }
 }
