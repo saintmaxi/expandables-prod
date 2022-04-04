@@ -344,7 +344,7 @@ p {
   align-items: center;
   background-color: white;
   color: black;
-  width: 95%;
+  width: 100%;
 }
 
 .about_frame {
@@ -1020,13 +1020,17 @@ p {
   position: relative;
   text-align: center;
   width: 45%;
-  padding: 1em;
+  padding: 2vw;
   background-color: #fff;
   color:black;
   position: relative;
   align-self: stretch;
-  margin: auto;
   min-height: 20vh;
+}
+
+#claim-section .stake-btn, #holder-claim-section .stake-btn {
+  text-align: center;
+  width: 50%;
 }
 
 .your-nft-div {
@@ -1096,7 +1100,7 @@ p {
 }
 
 .staker-panda {
-  width: 13%;
+  width: 14%;
   font-size: 1.3vw;
   margin: 10px;
   transition: transform ease 300ms;
@@ -1369,6 +1373,7 @@ p {
 #claim-sections {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 #mobile-navbar {
@@ -1582,7 +1587,7 @@ p {
   }
 
   .staker-panda {
-    width: 41%;
+    width: 42%;
   }
 
   .navigation_link {
@@ -1828,9 +1833,15 @@ p {
   }
 
   .staking-section {
-    padding-right: 5vh;
-    padding-left: 5vh;
+    padding-right: 2vh;
+    padding-left: 2vh;
     padding-top: 4vh;
+  }
+
+  .selected {
+    padding: 10px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .nft-showcase-grid {
@@ -1852,6 +1863,18 @@ p {
 }
 
 @media screen and (max-width: 767px) {
+
+  .panda-id, .bamboo-earned {
+    padding: 0px;
+    padding-top: 3px;
+    font-size: 2.3vh;
+    line-height: 2.7vh;
+  }
+
+  .stake-btn {
+    text-align: center;
+    width: 95% !important;
+  }
 
   .bamboo-balance-float {
     position: fixed;

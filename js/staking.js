@@ -257,7 +257,7 @@ const getPandaImages = async()=>{
 
 const getBambooEarnedByID = async(id) => {
     try {
-        return Number(formatEther(await bamboo.calculateStakingRewards(id))).toFixed(3);
+        return Number(formatEther(await bamboo.calculateStakingRewards(id))).toFixed(2);
     }
     catch {
         console.log('Metamask throws extra error. Token reward lookup was successful.')
@@ -275,7 +275,7 @@ const updateBambooEarned = async() => {
             totalEarned += Number(bambooEarnedByID);
         }
     };
-    $("#bamboo-to-claim").text(`$BAMBOO to Claim: ${totalEarned.toFixed(3)}`);
+    $("#bamboo-to-claim").text(`$BAMBOO to Claim: ${totalEarned.toFixed(2)}`);
 };
 
 const updateStakingInfo = async()=>{
@@ -420,7 +420,7 @@ async function selectForUnstaking(id) {
         for (let i = 0; i < selectedForUnstakingArray.length; i++) {
             bambooToClaim += Number(await getBambooEarnedByID(selectedForUnstakingArray[i]));
         }
-        $("#bamboo-to-claim").text(`$BAMBOO to Claim: ${bambooToClaim.toFixed(3)}`);
+        $("#bamboo-to-claim").text(`$BAMBOO to Claim: ${bambooToClaim.toFixed(2)}`);
         let selectedString = `${selectedForUnstakingArray.join(' ')}`;
         $("#selected-for-unstaking").text(selectedString);
     }

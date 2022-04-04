@@ -142,16 +142,16 @@
     <div id='claim-sections'>
       <div id='holder-claim-section'>
         <div class='connect-wallet-div hidden'></div>
-        <h3>Early Supporter Bonus:</h3>
-        <p class='paragraph-2'>Early supporters are eligible to claim $BAMBOO based on the token IDs of their Pandas. Bonus can only be claimed once per token. <br><strong>MUST CLAIM WHILE UNSTAKED!</strong>
+        <h3>Early Supporter Bonus</h3>
+        <p class='paragraph-2'>Early supporters can claim $BAMBOO based on the token IDs of their Pandas. Can only be claimed once per token. <br><strong>MUST CLAIM WHILE UNSTAKED!</strong>
         </p>
         <a id="claim-bamboo-button" href="#" class="stake-btn stake-all w-button" onclick="claimHolderBonus()">claim all</a>
       </div>
       <br>
       <div id='claim-section'>
         <div class='connect-wallet-div hidden'></div>
-        <h3>Your Claimable $BAMBOO:</h3>
-        <p style="margin-bottom: 0" class='paragraph-2'>$BAMBOO balance earned from staking will display here.</p>
+        <h3>Claimable $BAMBOO</h3>
+        <p style="margin-bottom: 0" class='paragraph-2'>$BAMBOO earned from staking will display here.</p>
         <h3 style="margin: 10px" id="claimable-bamboo">0</h3>
         <a id="claim-bamboo-button" href="#" class="stake-btn stake-all w-button" onclick="claimBamboo()">claim all</a>
       </div>
@@ -177,7 +177,7 @@
           <img src="images/Tropofarmer.png">
           <p class="panda-id">???</p>
         </div>
-      </div><br>
+      </div><br class="hide-on-mobile">
       <p class="selected">Selected:</p>
       <p class="selected" id="selected-for-staking">None</p>
       <a id="stake-all-btn" href="#" class="stake-btn stake-all w-button" onclick="stakePandasToBamboo()">stake selected</a>
@@ -194,7 +194,7 @@
             <img src="images/Tropofarmer.png">
             <p class="panda-id">???</p>
           </div>
-        </div><br>
+        </div><br class="hide-on-mobile">
         <p class="selected">Selected:</p>
         <p class="selected" id="selected-for-unstaking">None</p>
         <p class="selected" id='bamboo-to-claim'>$BAMBOO to Claim: 0</p>
