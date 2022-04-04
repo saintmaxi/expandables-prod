@@ -457,7 +457,7 @@
         "twitter": "https://twitter.com/NaiveNekos",
         "max-slots": 20,
         "discord-required": "false",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "49": {
         "name": "Astro Mallows REFILL",
