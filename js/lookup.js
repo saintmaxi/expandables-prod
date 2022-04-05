@@ -112,6 +112,15 @@ const getBambooEarnedByID = async() => {
     }
 };
 
+const splitArrayToChunks = (array_, chunkSize_) => {
+    let _arrays = Array(Math.ceil(array_.length / chunkSize_))
+        .fill()
+        .map((_, index) => index * chunkSize_)
+        .map((begin) => array_.slice(begin, begin + chunkSize_));
+
+    return _arrays;
+};
+
 var projectToWL = new Map();
 var myWL = [];
 var collectionsData;
@@ -119,40 +128,49 @@ var collectionsData;
 const loadCollectionsData = async() => {
     collectionsData = await $.getJSON('./data/partner-collections.json');
     let projectIDs = Object.keys(collectionsData);
+    const chunks = splitArrayToChunks(projectIDs, 20);
+    let idToJSX = new Map();
+    let fullJSX = "";
     let userAddress = await getAddress();
-    for (let i = 0; i < projectIDs.length; i++) {
-        let id = Number(projectIDs[i]);
-        let projectName = collectionsData[String(id)].name;
-        let winners = [];
-        if (collectionsData[String(id)]["discord-required"] == "true") {
-            let eventFilterName = market.filters.PurchasedWithName(id);
-            let eventsName = await market.queryFilter(eventFilterName);
-            for (let i = 0; i < eventsName.length; i++) {
-                if (eventsName[i].args._address == userAddress) {
-                    myWL.push(projectName);
+    for (const chunk of chunks) {
+        await Promise.all(chunk.map(async (i) => {
+            console.log(chunk, i)
+            let id = Number(i);
+            let projectName = collectionsData[String(id)].name;
+            let winners = [];
+            if (collectionsData[String(id)]["discord-required"] == "true") {
+                let eventFilterName = market.filters.PurchasedWithName(id);
+                let eventsName = await market.queryFilter(eventFilterName);
+                for (let i = 0; i < eventsName.length; i++) {
+                    if (eventsName[i].args._address == userAddress) {
+                        myWL.push(projectName);
+                    }
+                    winners.push(`${eventsName[i].args.name} - ${eventsName[i].args._address}`);
                 }
-                winners.push(`${eventsName[i].args.name} - ${eventsName[i].args._address}`);
             }
-        }
-        else {
-            let eventFilter = market.filters.Purchase(id);
-            let events = await market.queryFilter(eventFilter);
-            for (let i = 0; i < events.length; i++) {
-                if (events[i].args._address == userAddress) {
-                    myWL.push(projectName);
+            else {
+                let eventFilter = market.filters.Purchase(id);
+                let events = await market.queryFilter(eventFilter);
+                for (let i = 0; i < events.length; i++) {
+                    if (events[i].args._address == userAddress) {
+                        myWL.push(projectName);
+                    }
+                    winners.push(`${events[i].args._address}`);
                 }
-                winners.push(`${events[i].args._address}`);
             }
-        }
-        if (winners.includes((await getAddress()))) {
-            myWL.push(projectName);
-        }
-        projectToWL.set(projectName, winners);
-        $("#wl-select").append(`<option value="${projectName}">${projectName}</option>`);
-        if (i == 0) {
-            selectWL(projectName);
-        }
+            if (winners.includes((await getAddress()))) {
+                myWL.push(projectName);
+            }
+            projectToWL.set(projectName, winners);
+            let fakeJSX = `<option value="${projectName}">${projectName}</option>`
+            idToJSX.set(i, fakeJSX);
+        }))
+    };
+    for (const id of projectIDs) {
+        fullJSX += idToJSX.get(id);
     }
+    $("#wl-select").append(fullJSX);
+    selectWL($("#wl-select option:first").val());
 }
 
 const loadMyWL = async() => {
@@ -167,9 +185,9 @@ const loadMyWL = async() => {
 
 function selectWL(projectName) {
     let wlArray = [...(projectToWL.get(projectName))];
-    let wlString = wlArray.join("\n");
+    let wlString = wlArray.join("<br>");
     $("#wl-section").empty();
-    $("#wl-section").text(wlString);
+    $("#wl-section").html(wlString);
     updateDownload();
 }
 
