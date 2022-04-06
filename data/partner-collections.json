@@ -588,45 +588,5 @@
         "max-slots": 10,
         "discord-required": "true",
         "display-on-market": "true"
-    },
-    "62": {
-        "name": "Clay",
-        "description": "Fully on-chain 3D generative art, by Kai",
-        "image": "https://pbs.twimg.com/profile_images/1510176024616902661/GkaCNTZe_400x400.jpg",
-        "website": "",
-        "twitter": "https://twitter.com/we_are_clay_",
-        "max-slots": 10,
-        "discord-required": "true",
-        "display-on-market": "true"
-    },
-    "63": {
-        "name": "The Squids, Squid Ink",
-        "description": "1,000 Genesis Lab-made NFTs designed to play games on the metaverse. Please note this is not a guaranteed whitelist spot! Five (5) Squid Ink for buyers!",
-        "image": "https://pbs.twimg.com/profile_images/1495503180347719683/_rhpZdpB_400x400.png",
-        "website": "https://thesquids.io/",
-        "twitter": "https://twitter.com/TheSquids_NFT",
-        "max-slots": 5,
-        "discord-required": "true",
-        "display-on-market": "true"
-    },
-    "64": {
-        "name": " Copium Wars",
-        "description": "Discounted (-50% from the mint price) whitelist spots! Copium Wars: Cult of the Dead Bear",
-        "image": "https://pbs.twimg.com/profile_images/1483182004900356099/a3vFef6G_400x400.png",
-        "website": "https://copiumwars.xyz/",
-        "twitter": "https://twitter.com/copiumwars",
-        "max-slots": 8,
-        "discord-required": "true",
-        "display-on-market": "true"
-    },
-    "65": {
-        "name": "Voxel Ville",
-        "description": "Voxel Ville is a digitized village that exists on the Ethereum blockchain in a metaverse very, very far away.",
-        "image": "https://pbs.twimg.com/profile_images/1445815366303715341/fFCib-kf_400x400.jpg",
-        "website": "https://www.voxelville.io/",
-        "twitter": "https://twitter.com/VilleVoxel",
-        "max-slots": 40,
-        "discord-required": "true",
-        "display-on-market": "true"
     }
 }
