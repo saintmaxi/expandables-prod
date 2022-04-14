@@ -688,5 +688,35 @@
         "max-slots": 5,
         "discord-required": "true",
         "display-on-market": "true"
+    },
+    "72": {
+        "name": "Pirate Pals",
+        "description": "444 Genesis Collection - Sold Out. 4444 Pirate Pals - Coming Soon",
+        "image": "https://pbs.twimg.com/profile_images/1507390653445062658/HRYhpBml_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/PiratePalsNFT/photo",
+        "max-slots": 20,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "73": {
+        "name": "Rocketheadz",
+        "description": "Race for ETH. LA based Game Studio launching a unique P2E NFT game. Get $KRANK",
+        "image": "https://pbs.twimg.com/profile_images/1505977435778547712/mQKaBQhV_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/Rocketheadz",
+        "max-slots": 15,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "74": {
+        "name": "Mendel",
+        "description": "Following Mendel’s mesmerising journey through space.",
+        "image": "https://pbs.twimg.com/profile_images/1495532035754049550/aJOhIGop_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/MendelNFT",
+        "max-slots": 20,
+        "discord-required": "true",
+        "display-on-market": "true"
     }
 }
