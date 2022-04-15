@@ -717,6 +717,6 @@
         "twitter": "https://twitter.com/MendelNFT",
         "max-slots": 20,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     }
 }
