@@ -697,7 +697,7 @@
         "twitter": "https://twitter.com/PiratePalsNFT/photo",
         "max-slots": 20,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "73": {
         "name": "Rocketheadz",
@@ -726,6 +726,36 @@
         "website": "https://luvbugznft.com/",
         "twitter": "https://twitter.com/BugzNft",
         "max-slots": 10,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "77": {
+        "name": "Kong Hub",
+        "description": "Whitepaper release soon",
+        "image": "https://pbs.twimg.com/profile_images/1493688723183124484/5GM9_hm9_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/Konghub_",
+        "max-slots": 15,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "78": {
+        "name": "Voxels NFT",
+        "description": "Algorithmic generated collective || Own your curated share",
+        "image": "https://pbs.twimg.com/profile_images/1496385945297461250/Kqf7cAmi_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/Voxels_NFT",
+        "max-slots": 5,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "79": {
+        "name": "Voxels FREE NFT",
+        "description": "Algorithmic generated collective || Own your curated share",
+        "image": "https://pbs.twimg.com/profile_images/1496385945297461250/Kqf7cAmi_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/Voxels_NFT",
+        "max-slots": 3,
         "discord-required": "true",
         "display-on-market": "true"
     }
