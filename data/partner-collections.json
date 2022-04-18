@@ -758,5 +758,35 @@
         "max-slots": 3,
         "discord-required": "true",
         "display-on-market": "true"
+    },
+    "80": {
+        "name": "Neon Pantheon 2nd REFILL",
+        "description": "Experiential AR NFT project by fully doxxed team. Celebrating cultural diversity and inclusivity",
+        "image": "https://pbs.twimg.com/profile_images/1491083015774081024/7ezJBFzl_400x400.jpg",
+        "website": "https://neonpantheon.com/",
+        "twitter": "https://twitter.com/NeonPantheonNFT",
+        "max-slots": 10,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "81": {
+        "name": "Skull Dungeon",
+        "description": "SKULL DUNGEON 💀 3777 Genesis Collection, staking/ breeding.",
+        "image": "https://pbs.twimg.com/profile_images/1507771937111613450/fKeA191u_400x400.jpg",
+        "website": "https://skulldungeon.io/",
+        "twitter": "https://twitter.com/SkullDungeonNFT",
+        "max-slots": 15,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "82": {
+        "name": "Voxels NFT",
+        "description": "Algorithmic generated collective || Own your curated share",
+        "image": "https://pbs.twimg.com/profile_images/1496385945297461250/Kqf7cAmi_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/Voxels_NFT",
+        "max-slots": 5,
+        "discord-required": "true",
+        "display-on-market": "true"
     }
 }
