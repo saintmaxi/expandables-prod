@@ -807,7 +807,7 @@
         "twitter": "https://twitter.com/SkullDungeonNFT",
         "max-slots": 10,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "85": {
         "name": "Neon Pantheon 3rd REFILL",
