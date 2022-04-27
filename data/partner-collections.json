@@ -817,7 +817,7 @@
         "twitter": "https://twitter.com/NeonPantheonNFT",
         "max-slots": 10,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "86": {
         "name": "Demonica",
