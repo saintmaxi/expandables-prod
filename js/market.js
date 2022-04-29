@@ -213,9 +213,9 @@ const loadCollections = async() => {
             let WLinfo = await market.getWhitelist(id);
             let collectionPrice = Number(formatEther(WLinfo.price));
 
-            if ((await expandables.balanceOf(userAddress)) == 0) {
-                collectionPrice = collectionPrice * 1.25;
-            }
+            // if ((await expandables.balanceOf(userAddress)) == 0) {
+            //     collectionPrice = collectionPrice * 1.25;
+            // }
 
             // Data from JSON file
             let collection = collectionsData[String(id)];
