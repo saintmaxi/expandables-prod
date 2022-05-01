@@ -947,7 +947,7 @@
         "twitter": "https://twitter.com/Nohowstyle/photo",
         "max-slots": 15,
         "discord-required": "false",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "99": {
         "name": "Citizens of Tajigen REFILL",
