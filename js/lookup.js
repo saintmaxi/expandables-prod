@@ -162,7 +162,7 @@ const loadCollectionsData = async() => {
                 myWL.push(projectName);
             }
             projectToWL.set(projectName, winners);
-            let fakeJSX = `<option value="${projectName}">${projectName}</option>`
+            let fakeJSX = `<option value="${projectName}">${i}: ${projectName}</option>`
             idToJSX.set(i, fakeJSX);
         }))
     };
