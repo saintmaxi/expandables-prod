@@ -1068,5 +1068,25 @@
         "max-slots": 5,
         "discord-required": "true",
         "display-on-market": "false"
+    },
+    "111": {
+        "name": "NFT Nerds 1 month",
+        "description": "Cleanest NFT tools in the space.",
+        "image": "https://pbs.twimg.com/profile_images/1516895391521906688/EO9dzC4N_400x400.jpg",
+        "website": "https://nftnerds.ai/",
+        "twitter": "https://twitter.com/NFTNerdsAI",
+        "max-slots": 5,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "112": {
+        "name": "Squishiland REFILL",
+        "description": "The possibilities are endless... Build, Share & Earn in the Metaverse. 🛠️ Supply of 4,444",
+        "image": "https://pbs.twimg.com/profile_images/1516589515263164434/6ybgHmSq_400x400.jpg",
+        "website": "https://www.squishiverse.com/",
+        "twitter": "https://twitter.com/SquishiverseNFT",
+        "max-slots": 10,
+        "discord-required": "false",
+        "display-on-market": "true"
     }
 }
