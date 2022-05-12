@@ -1080,13 +1080,13 @@
         "display-on-market": "true"
     },
     "112": {
-        "name": "Squishiland REFILL",
+        "name": "Squishiland 2nd REFILL",
         "description": "The possibilities are endless... Build, Share & Earn in the Metaverse. 🛠️ Supply of 4,444",
         "image": "https://pbs.twimg.com/profile_images/1516589515263164434/6ybgHmSq_400x400.jpg",
         "website": "https://www.squishiverse.com/",
         "twitter": "https://twitter.com/SquishiverseNFT",
         "max-slots": 10,
         "discord-required": "false",
-        "display-on-market": "true"
+        "display-on-market": "false"
     }
 }
