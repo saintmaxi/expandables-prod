@@ -987,7 +987,7 @@
         "twitter": "https://twitter.com/PlanetSlyNFT",
         "max-slots": 15,
         "discord-required": "false",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "103": {
         "name": "Flower Fam",
