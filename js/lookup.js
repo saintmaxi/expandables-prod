@@ -62,7 +62,7 @@ const connect = async()=>{
 };
 
 const getAddress = async()=>{
-    return await signer.getAddress()
+    await signer.getAddress()
 };
 
 const formatEther = (balance_)=>{
@@ -157,9 +157,6 @@ const loadCollectionsData = async() => {
                     }
                     winners.push(`${events[i].args._address}`);
                 }
-            }
-            if (winners.includes((await getAddress()))) {
-                myWL.push(projectName);
             }
             projectToWL.set(projectName, winners);
             let fakeJSX = `<option value="${projectName}">${i}: ${projectName}</option>`
