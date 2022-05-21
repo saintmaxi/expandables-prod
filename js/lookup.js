@@ -62,7 +62,7 @@ const connect = async()=>{
 };
 
 const getAddress = async()=>{
-    await signer.getAddress()
+    return await signer.getAddress();
 };
 
 const formatEther = (balance_)=>{
