@@ -1088,5 +1088,15 @@
         "max-slots": 10,
         "discord-required": "false",
         "display-on-market": "false"
+    },
+    "113": {
+        "name": "Secret Alpha",
+        "description": "Talk less, do more. Shh... Please note that this is a project on Solana!",
+        "image": "https://pbs.twimg.com/profile_images/1527377449989722115/1K7RH7LL_400x400.jpg",
+        "website": "",
+        "twitter": "https://twitter.com/SecretAlphaLabs",
+        "max-slots": 5,
+        "discord-required": "true",
+        "display-on-market": "true"
     }
 }
