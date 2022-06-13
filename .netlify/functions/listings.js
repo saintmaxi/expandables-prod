@@ -65,7 +65,7 @@ const getCollections = async() => {
                 WLinfo = await marketContract.getWhitelist(id - V2_START);
             }
 
-            collectionPrice = Number(ethers.formatEther(WLinfo.price));
+            collectionPrice = Number(ethers.utils.formatEther(WLinfo.price));
 
             let tokenImg;
             if (version == 2) {
