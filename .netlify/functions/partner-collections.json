@@ -1117,7 +1117,7 @@
         "twitter": "https://twitter.com/SquishiverseNFT",
         "max-slots": 10,
         "discord-required": "false",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "116": {
         "name": "Test #3",
@@ -1127,6 +1127,6 @@
         "twitter": "https://twitter.com/SquishiverseNFT",
         "max-slots": 15,
         "discord-required": "false",
-        "display-on-market": "true"
+        "display-on-market": "false"
     }
 }
