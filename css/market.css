@@ -1,4 +1,14 @@
 
+#discount-msg {
+    text-align:center;
+    background-color: white;
+    color: black;
+    width: 80%;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 /* Approval section */
 
 #approval-container {
@@ -11,7 +21,7 @@
 
 #approval {
     margin: 0;
-    width: 50%;
+    width: 80%;
     padding: 2vw;
    background-color: white;
    color: black;
@@ -21,7 +31,19 @@
     margin: 0;
 }
 
-#approval-button {
+#token-approvals {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.token-approval {
+    width: 50%;
+    display: inline-block;
+}
+
+.approval-button {
+    width: 90%;
     margin: auto;
     color: white;
 }
@@ -240,10 +262,10 @@ h4 {
 
 .collection-price {
     background-color: white;
-    padding: 0 .5vw;
+    padding: 10px;
     border: solid black .2vw;
     border-radius: 20px;
-    width: 40%;
+    width: 50%;
     display: inline-block;
 }
 
@@ -277,6 +299,13 @@ h4 {
 
 #close {
     padding: .2vw;
+}
+
+.discount-amount {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    color: red;
 }
 
 #mint-button-div {
@@ -454,6 +483,12 @@ h4 {
         width: 90%;
     }
 
+    #discount-msg {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 90%;
+    }
+
     /* Approval section*/
 
     #approval-container {
@@ -469,8 +504,22 @@ h4 {
         line-height: 4.5vh !important;
     }
 
-    #approval-button {
+    #token-approvals {
+        display: initial;
+    }
+
+    .token-approval {
+        width: 100%;
+        display: inline-block;
+    }
+
+    #exp-approval {
+        margin-top: 20px;
+    }
+
+    .approval-button {
         width: 90%;
+        color: white !important;
     }
 
     /* End approval section*/
@@ -636,7 +685,7 @@ h4 {
 @media screen and (min-width: 1900px) {
 
     .collection-img {
-        width: 250px;
-        height: 250px;
+        width: 350px;
+        height: 350px;
     }
 }

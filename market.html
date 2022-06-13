@@ -131,11 +131,21 @@
     </div>
   </nav>
   <br>
+  <h2 id="discount-msg">2% DISCOUNT PER STAKED PANDA<br>(MAX 50%, ONLY ON $BAMBOO LISTINGS)</h2><br>
   <div id="approval-container" class="section body-section body-1 wf-section hidden">
    <div id="approval" class="container w-container box" style="text-align: center;">
       <h1>APPROVE MARKETPLACE</h1><br>
-      <h3>Approve marketplace to spend your $BAMBOO to purchase whitelist slots.</h3><br>
-      <button class="button" id="approval-button" onclick="approveBambooToMarket()">APPROVE</button>
+      <h3>Approve marketplace to spend your $BAMBOO and $EXP to purchase whitelist slots.</h3><br><br>
+      <div id="token-approvals">
+         <div class="token-approval" id="bamboo-approval">
+            <h3>APPROVE $BAMBOO</h3><br>
+            <button class="button approval-button" id="bamboo-approval-button" onclick="approveBambooToMarket()">APPROVE</button>
+         </div>
+         <div class="token-approval" id="exp-approval">
+            <h3>APPROVE $EXP</h3><br>
+            <button class="button approval-button" id="exp-approval-button" onclick="approveExpToMarket()">APPROVE</button>
+         </div>
+      </div>
       <br>
    </div>
   </div>
@@ -211,8 +221,18 @@
     </div>
  </div>
  <div class="bamboo-balance-float">
-   <div>Balance: <span id="bamboo-balance"><span class="one">.</span><span class="two">.</span><span class="three">.</span></span></div>
-   <img class="bamboo-icon" src="./images/bamboo-icon.png">
+   <div>
+      <div>
+         <span class="hide-on-mobile">Balance: </span><span id="bamboo-balance"><span class="one">.</span><span class="two">.</span><span class="three">.</span></span>
+         <img class="bamboo-icon" src="./images/bamboo-icon.png">
+      </div>
+      <div id="exp-balance">
+         <span id="exp-balance-inner">
+            <span class="one">.</span><span class="two">.</span><span class="three">.</span>
+         </span>
+         <img class="bamboo-icon" src="./images/exp-icon.png">
+      </div>
+   </div>
 </div>
  <!-- <div class="refresh-cache" id="clear-button" onclick="clearPendingTxs()">
    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="Layer_1" version="1.1" viewBox="0 0 32 32"><path d="M28 16c-1.219 0-1.797.859-2 1.766C25.269 21.03 22.167 26 16 26c-5.523 0-10-4.478-10-10S10.477 6 16 6c2.24 0 4.295.753 5.96 2H20c-1.104 0-2 .896-2 2s.896 2 2 2h6c1.104 0 2-.896 2-2V4c0-1.104-.896-2-2-2s-2 .896-2 2v.518C21.733 2.932 18.977 2 16 2 8.268 2 2 8.268 2 16s6.268 14 14 14c9.979 0 14-9.5 14-11.875C30 16.672 28.938 16 28 16z"/></svg>

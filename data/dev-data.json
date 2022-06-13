@@ -1,0 +1,22 @@
+{
+    "0": {
+        "name": "vSamurai",
+        "description": "A limited-supply genesis NFT collection on the Ethereum Network. Play and Earn as you follow the path of vSamurai. Coming soon.",
+        "image": "https://pbs.twimg.com/media/FMzFI3DXwAY6BNn?format=png&name=small",
+        "website": "",
+        "twitter": "https://twitter.com/vSamurai_NFT",
+        "max-slots": 1000,
+        "discord-required": "true",
+        "display-on-market": "true"
+    },
+    "1": {
+        "name": "Embers",
+        "description": "A collection of 5,555 burning hot NFTs living in the core of the blockchain. Coming in March 2022.",
+        "image": "https://github.com/saintmaxi/expandables-dev/blob/main/images/embers.gif?raw=true",
+        "website": "https://www.embersnft.com/",
+        "twitter": "https://twitter.com/embersnft",
+        "max-slots": 1000,
+        "discord-required": "false",
+        "display-on-market": "true"
+    }
+}
