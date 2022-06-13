@@ -1107,7 +1107,7 @@
         "twitter": "https://twitter.com/SquishiverseNFT",
         "max-slots": 10,
         "discord-required": "false",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "115": {
         "name": "Test #2",
