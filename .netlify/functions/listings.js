@@ -33,7 +33,6 @@ const splitArrayToChunks = (array_, chunkSize_) => {
 };
 
 const getCollections = async() => {
-    let userAddress = await getAddress();
     let liveJSX = "";
     let pastJSX = "";
     let numLive = 0;
@@ -66,24 +65,7 @@ const getCollections = async() => {
                 WLinfo = await marketContract.getWhitelist(id - V2_START);
             }
 
-            let collectionPrice;
-            let discountMultiplier = 100;
-
-            if (version == 2) {
-                if (WLinfo.acceptedCurrency == bambooAddress) {
-                    let expandablesStaked = (await bamboo.stakedPandasOf((await getAddress()))).length;
-                    discountMultiplier = 100 - Math.min(expandablesStaked * WLinfo.percentPerToken, WLinfo.maxTotalPercent);
-                    collectionPrice = Number(formatEther(WLinfo.price)) * discountMultiplier/100;
-                }
-                else {
-                    collectionPrice = Number(formatEther(WLinfo.price));
-                }
-            }
-            else {
-                collectionPrice = Number(formatEther(WLinfo.price));
-            }
-
-            let discountCaption = (discountMultiplier == 100) ? "" : `-${100 - discountMultiplier}%`;
+            collectionPrice = Number(formatEther(WLinfo.price));
 
             let tokenImg;
             if (version == 2) {
@@ -98,26 +80,11 @@ const getCollections = async() => {
             let maxSlots = collection["max-slots"];
             let minted = maxSlots - WLinfo.amount;
             let display = collectionsData[String(id)]["display-on-market"] == "true" ? true : false;
-            let discordRequired = (collectionsData[String(id)]["discord-required"] == "true");
 
             let winners = [];
             let eventID = id;
             if (version == 2) {
                 eventID -= V2_START;
-            }
-            if (discordRequired) {
-                let eventFilterName = marketContract.filters.PurchasedWithName(eventID);
-                let eventsName = await marketContract.queryFilter(eventFilterName);
-                for (let i = 0; i < eventsName.length; i++) {
-                    winners.push(`${eventsName[i].args._address}`);
-                }
-            }
-            else {
-                let eventFilter = marketContract.filters.Purchase(eventID);
-                let events = await marketContract.queryFilter(eventFilter);
-                for (let i = 0; i < events.length; i++) {
-                    winners.push(`${events[i].args._address}`);
-                }
             }
 
             let link = collection["website"] != "" ? `href="${collection["website"]}" target="_blank"` : "nohref";
@@ -125,18 +92,6 @@ const getCollections = async() => {
             if (display) {
                 if (minted != maxSlots) {
                     numLive += 1;
-                    let button;
-                    if (winners.includes(userAddress)) {
-                        button = `<button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">BOUGHT!</button>`;
-                    }
-                    else {
-                        if (discordRequired) {
-                            button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="promptForDiscord(${id})">BUY</button>`;
-                        }
-                        else {
-                            button = `<button class="mint-prompt-button button" id="${id}-mint-button" onclick="purchase(${id})">BUY</button>`;
-                        }
-                    }
                     let fakeJSX = `<div class="partner-collection" id="project-${id}">
                                     <h4 class="discount-amount">${discountCaption}</h4>
                                     <a href="${collection["twitter"]}" target="_blank">
@@ -159,7 +114,7 @@ const getCollections = async() => {
                                             <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
                                         </h4>
                                     </div>
-                                    ${button}
+                                    <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
                                     </div>`
                     idToLiveJSX.set(id, fakeJSX);
                 }
@@ -186,7 +141,7 @@ const getCollections = async() => {
                                             <span id="${id}-supply">${minted}</span>/<span id="${id}-max-supply">${maxSlots}</span> Filled                                
                                         </h4>
                                     </div>
-                                    <button disabled class="mint-prompt-button button purchased" id="${id}-mint-button">SOLD OUT</button>
+                                    <button class="mint-prompt-button button" id="${id}-mint-button" onclick="connect()">CONNECT</button>
                                     </div>`
                     idToPastJSX.set(id, fakeJSX);
                 }
