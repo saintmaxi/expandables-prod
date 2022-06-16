@@ -423,6 +423,7 @@ const loadCollections = async() => {
                 else {
                     numPast +=1;
                     let fakeJSX = `<div class="partner-collection" id="project-${id}">
+                x                    <h4 class="discount-amount">${discountCaption}</h4>
                                     <a href="${collection["twitter"]}" target="_blank">
                                         <img class="collection-twitter" src="./images/twitter-white.png">
                                     </a>
