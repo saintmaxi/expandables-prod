@@ -1147,7 +1147,7 @@
         "twitter": "https://twitter.com/GREED_Nu",
         "max-slots": 15,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "119": {
         "name": "Greed",
@@ -1157,7 +1157,7 @@
         "twitter": "https://twitter.com/GREED_Nu",
         "max-slots": 15,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "120": {
         "name": "Generative Dungeon Avatars",
@@ -1167,7 +1167,7 @@
         "twitter": "https://twitter.com/GenDungeon",
         "max-slots": 15,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     },
     "121": {
         "name": "Generative Dungeon Avatars",
@@ -1177,6 +1177,6 @@
         "twitter": "https://twitter.com/GenDungeon",
         "max-slots": 15,
         "discord-required": "true",
-        "display-on-market": "true"
+        "display-on-market": "false"
     }
 }
